@@ -7,10 +7,11 @@
 [ext_resource path="res://objects/level/Surface.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 0, -1 )
 script = ExtResource( 4 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 3 )]
-position = Vector2( 732, 285 )
+position = Vector2( -207, 21 )
 template = ExtResource( 2 )
 weight = 200
 friction = 200
@@ -18,7 +19,7 @@ drag = 400
 color = Color( 1, 0, 0, 1 )
 
 [node name="PlayerSpawner2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1085, 296 )
+position = Vector2( 753, -88 )
 template = ExtResource( 2 )
 player_id = 1
 weight = 200
@@ -27,13 +28,19 @@ drag = 400
 color = Color( 0, 0.529412, 1, 1 )
 
 [node name="Surface" parent="." instance=ExtResource( 5 )]
-margin_left = -103.0
-margin_top = 424.0
-margin_right = 1545.0
-margin_bottom = 546.0
+margin_left = -329.0
+margin_top = 139.0
+margin_right = 1319.0
+margin_bottom = 261.0
 
 [node name="Surface5" parent="." instance=ExtResource( 1 )]
-margin_left = 928.0
-margin_top = 350.0
-margin_right = 1044.0
-margin_bottom = 402.0
+margin_left = 489.0
+margin_top = 57.0
+margin_right = 651.0
+margin_bottom = 139.0
+
+[node name="Surface2" parent="." instance=ExtResource( 5 )]
+margin_left = 651.0
+margin_top = 57.0
+margin_right = 1319.0
+margin_bottom = 190.0

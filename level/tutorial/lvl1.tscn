@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/level/Surface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/level/SurfaceSlope.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -77,7 +78,7 @@ margin_bottom = -42.0
 margin_left = -2019.0
 margin_top = -66.0
 margin_right = -1968.0
-margin_bottom = -42.0
+margin_bottom = 0.0
 
 [node name="Surface3" parent="." instance=ExtResource( 3 )]
 margin_left = -1760.0
@@ -100,7 +101,7 @@ margin_right = -1491.0
 margin_bottom = -248.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Surface5" parent="." instance=ExtResource( 3 )]
+[node name="Net 1" parent="." instance=ExtResource( 3 )]
 margin_left = -1491.0
 margin_top = 73.0
 margin_right = -1335.0
@@ -128,15 +129,39 @@ margin_bottom = -240.0
 
 [node name="Platform9" parent="." instance=ExtResource( 3 )]
 margin_left = 2094.0
-margin_top = -40.0
+margin_top = -72.0
 margin_right = 2147.0
-margin_bottom = -28.0
+margin_bottom = -60.0
 
 [node name="Platform10" parent="." instance=ExtResource( 3 )]
 margin_left = 2094.0
-margin_top = -183.0
+margin_top = -218.0
 margin_right = 2147.0
-margin_bottom = -171.0
+margin_bottom = -206.0
+
+[node name="Platform11" parent="." instance=ExtResource( 3 )]
+margin_left = 1668.0
+margin_top = -381.0
+margin_right = 1721.0
+margin_bottom = -369.0
+
+[node name="Platform12" parent="." instance=ExtResource( 3 )]
+margin_left = 1771.0
+margin_top = -218.0
+margin_right = 1824.0
+margin_bottom = -206.0
+
+[node name="Platform13" parent="." instance=ExtResource( 3 )]
+margin_left = 1668.0
+margin_top = -64.0
+margin_right = 1721.0
+margin_bottom = -52.0
+
+[node name="Platform14" parent="." instance=ExtResource( 3 )]
+margin_left = 1772.0
+margin_top = 72.0
+margin_right = 1825.0
+margin_bottom = 84.0
 
 [node name="Platform6" parent="." instance=ExtResource( 3 )]
 margin_left = -1491.0
@@ -149,6 +174,13 @@ margin_left = -1388.0
 margin_right = -1335.0
 margin_bottom = 12.0
 
+[node name="Net 2" parent="." instance=ExtResource( 3 )]
+margin_left = 1669.0
+margin_top = 115.0
+margin_right = 1825.0
+margin_bottom = 117.0
+rect_pivot_offset = Vector2( 40, 40 )
+
 [node name="Surface7" parent="." instance=ExtResource( 3 )]
 margin_left = -1276.0
 margin_top = -285.0
@@ -158,20 +190,34 @@ rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface8" parent="." instance=ExtResource( 3 )]
 margin_left = 2035.0
-margin_top = -183.0
+margin_top = -218.0
 margin_right = 2094.0
 margin_bottom = 72.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface9" parent="." instance=ExtResource( 3 )]
-margin_left = 1826.0
-margin_top = -183.0
+margin_left = 1825.0
+margin_top = -218.0
 margin_right = 2035.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
+[node name="Surface10" parent="." instance=ExtResource( 3 )]
+margin_left = 1458.0
+margin_top = -381.0
+margin_right = 1668.0
+margin_bottom = 0.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface11" parent="." instance=ExtResource( 3 )]
+margin_left = 1189.0
+margin_top = -252.0
+margin_right = 1458.0
+margin_bottom = 0.0
+rect_pivot_offset = Vector2( 40, 40 )
+
 [node name="Middle Right" parent="." instance=ExtResource( 3 )]
-margin_right = 1527.0
+margin_right = 1668.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
 
@@ -180,3 +226,28 @@ margin_left = 2286.0
 margin_right = 2423.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Middle Right3" parent="." instance=ExtResource( 3 )]
+margin_left = 1825.0
+margin_top = 72.0
+margin_right = 2286.0
+margin_bottom = 147.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="SurfaceSlope" parent="." instance=ExtResource( 5 )]
+margin_left = 2094.0
+margin_right = 2286.0
+margin_bottom = 72.0
+
+[node name="SurfaceSlope2" parent="." instance=ExtResource( 5 )]
+margin_left = 1189.0
+margin_top = -381.0
+margin_right = 1458.0
+margin_bottom = -252.0
+
+[node name="SurfaceSlope3" parent="." instance=ExtResource( 5 )]
+margin_left = -1968.0
+margin_top = -66.0
+margin_right = -1679.0
+margin_bottom = 0.0
+type = 1

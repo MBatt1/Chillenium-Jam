@@ -23,3 +23,4 @@ margin_bottom = 100.0
 position = Vector2( 403, 206 )
 weight = 200
 friction = 200
+drag = 400

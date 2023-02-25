@@ -6,10 +6,7 @@ extends KinematicBody2D
 # var b = "text"
 export(int) var weight
 export(int) var friction
-
-#fractional speed in the air. 25 = 25% speed in air
-export(int) var air_speed
-
+export(int) var drag
 
 var speed_x = 0
 var speed_y = 0
@@ -18,16 +15,13 @@ var speed_y = 0
 func _ready():
 	pass # Replace with function body.
 
-func add_drag(speed, decrementer, air_speed):
-	var air_resistance = 1
-	if not is_on_floor():
-		air_resistance = air_speed/100
+func add_drag(speed, decrementer):
 	if abs(speed) < 10:
 		return 0
 	elif speed > 0:
-		return (speed-decrementer)*air_resistance
+		return speed-decrementer
 	else:
-		return (speed+decrementer)*air_resistance
+		return speed+decrementer
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -39,7 +33,10 @@ func _physics_process(delta):
 		speed_x = 200
 	if Input.is_action_pressed("ui_left"):
 		speed_x = -200
-	speed_x = add_drag(speed_x,friction*delta,air_speed)
+	if not is_on_floor():
+		speed_x = add_drag(speed_x,drag*delta)
+	else:
+		speed_x = add_drag(speed_x,friction*delta)
 	var velocity = Vector2(speed_x, speed_y)
 	move_and_slide(velocity, Vector2.UP)
 # Called every frame. 'delta' is the elapsed time since the previous frame.

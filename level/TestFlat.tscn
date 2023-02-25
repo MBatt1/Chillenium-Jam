@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=3]
-[ext_resource path="res://objects/enemy.tscn" type="PackedScene" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1611.5, 83.5 )
+[ext_resource path="res://objects/level/Surface.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -14,19 +11,8 @@ script = ExtResource( 3 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( -13, -95 )
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-margin_left = -932.0
-margin_top = 521.0
-margin_right = 2301.0
-margin_bottom = 691.0
-rect_pivot_offset = Vector2( 1350, -258 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 684.5, 606 )
-shape = SubResource( 1 )
-
 [node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
-position = Vector2( -52, 233 )
+position = Vector2( 525, 273 )
 template = ExtResource( 2 )
 weight = 200
 friction = 200
@@ -34,7 +20,7 @@ drag = 400
 color = Color( 1, 0, 0, 1 )
 
 [node name="PlayerSpawner2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1085, 296 )
+position = Vector2( 956, 227 )
 template = ExtResource( 2 )
 player_id = 1
 weight = 200
@@ -42,5 +28,29 @@ friction = 200
 drag = 400
 color = Color( 0, 0.529412, 1, 1 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 685, 389 )
+[node name="ReferenceRect" parent="." instance=ExtResource( 4 )]
+margin_left = 762.0
+margin_top = 366.0
+margin_right = 998.0
+margin_bottom = 470.0
+
+[node name="Surface" parent="." instance=ExtResource( 4 )]
+margin_left = 396.0
+margin_top = 402.0
+margin_right = 811.0
+margin_bottom = 549.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface2" parent="." instance=ExtResource( 4 )]
+margin_left = 773.0
+margin_top = 457.0
+margin_right = 1610.0
+margin_bottom = 604.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface2" parent="Surface2" instance=ExtResource( 4 )]
+margin_left = -1140.0
+margin_top = -13.0
+margin_right = -303.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 40, 40 )

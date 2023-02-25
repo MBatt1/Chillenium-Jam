@@ -16,10 +16,11 @@ var right_control
 var down_control
 var left_control
 
-func setup(w, f, d, cam, uc, rc, dc, lc):
+func setup(w, f, d, color, cam, uc, rc, dc, lc):
 	weight = w
 	friction = f
 	drag = d
+	$AnimatedSprite.self_modulate = color
 	tracking_camera = cam
 	up_control = uc
 	right_control = rc
@@ -64,4 +65,5 @@ func _physics_process(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	tracking_camera.position = position
+	if tracking_camera:
+		tracking_camera.position = position

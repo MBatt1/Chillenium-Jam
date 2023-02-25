@@ -13,15 +13,14 @@ func _ready():
 	$LVC/Viewport.add_child(level)
 	resize_viewports()
 	var spawns = level.get_player_spawns()
-	spawns[0].spawn(level, $RVC/Viewport/Cam)
-	#$LVC/Viewport/Level/PlayerSpawner.spawn($LVC/Viewport/Level, $RVC/Viewport/Cam)
+	spawns[0].spawn(level, $LVC/Viewport/Cam)
+	spawns[1].spawn(level, $RVC/Viewport/Cam)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$LVC/Viewport/Cam.make_current()
 	$RVC/Viewport/Cam.make_current()
-	$RVC/Viewport/Cam.position += Vector2(0, 1)
 
 
 func resize_viewports():

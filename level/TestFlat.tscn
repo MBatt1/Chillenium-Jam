@@ -41,8 +41,18 @@ margin_bottom = 740.0
 rect_pivot_offset = Vector2( 1350, -258 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( -62, 203 )
+template = ExtResource( 2 )
+weight = 200
+friction = 200
+drag = 400
+color = Color( 1, 0, 0, 1 )
+
+[node name="PlayerSpawner2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 217 )
 template = ExtResource( 2 )
 player_id = 1
 weight = 200
 friction = 200
 drag = 400
+color = Color( 0, 0.529412, 1, 1 )

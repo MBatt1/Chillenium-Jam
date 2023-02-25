@@ -8,8 +8,8 @@
 [ext_resource path="res://sprites/jumping/jump3.png" type="Texture" id=6]
 [ext_resource path="res://sprites/jumping/jump2.png" type="Texture" id=7]
 
-[sub_resource type="CircleShape2D" id=11]
-radius = 33.0
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 28.5, 28.75 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -33,9 +33,10 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 0 )
-shape = SubResource( 11 )
+position = Vector2( 0, 23.25 )
+shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.64063, 1.65625 )
 frames = SubResource( 2 )
 animation = "jump"

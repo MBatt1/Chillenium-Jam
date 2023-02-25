@@ -15,7 +15,9 @@ extents = Vector2( 1611.5, 83.5 )
 script = ExtResource( 3 )
 
 [node name="Surface" parent="." instance=ExtResource( 7 )]
-speed = Vector2( 30, 30 )
+speed = Vector2( -30, 30 )
+x_final = 100
+y_final = 100
 x_offset = 10
 y_offset = 10
 

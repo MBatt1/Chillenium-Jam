@@ -1,6 +1,8 @@
 extends ReferenceRect
 
 export(Vector2) var speed
+export(int) var x_final
+export(int) var y_final
 export(int) var x_offset
 export(int) var y_offset
 # Declare member variables here. Examples:
@@ -29,8 +31,10 @@ func _ready():
 
 func _physics_process(delta):
 	if activate == true:
-		x_offset += speed.x*delta
-		y_offset += speed.y*delta
+		if abs(x_offset) < x_final:
+			x_offset += speed.x*delta
+		if abs(y_offset) < y_final:
+			y_offset += speed.y*delta
 	margin_right = r_pos + x_offset
 	margin_left = l_pos + x_offset
 	margin_top = t_pos +y_offset

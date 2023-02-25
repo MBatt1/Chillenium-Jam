@@ -10,7 +10,6 @@ export(int) var drag
 
 var speed_x = 0
 var speed_y = 0
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -24,22 +23,21 @@ func add_drag(speed, decrementer):
 		return speed+decrementer
 
 func _physics_process(delta):
-	var play_walk = true
-	if abs(speed_x) < 10:
+	#if speed_x < 10:
+		#$AnimatedSprite.play("default")
+	if is_on_floor() and speed_x <10:
 		$AnimatedSprite.play("default")
 	if not is_on_floor():
 		speed_y += weight*delta
-		play_walk = false
 	else:
 		if Input.is_action_pressed("ui_up"):
+			$AnimatedSprite.play("jump")
 			speed_y = -200
 	if Input.is_action_pressed("ui_right"):
-		if play_walk == true:
-			$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("walk")
 		speed_x = 200
 	if Input.is_action_pressed("ui_left"):
-		if play_walk == true:
-			$AnimatedSprite.play("walk")
+		$AnimatedSprite.play("walk")
 		speed_x = -200
 	if not is_on_floor():
 		speed_x = add_drag(speed_x,drag*delta)

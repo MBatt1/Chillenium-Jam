@@ -22,10 +22,12 @@ var right_control
 var down_control
 var left_control
 
-func setup(w, f, d, color, cam, uc, rc, dc, lc):
+func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc):
 	weight = w
 	friction = f
 	drag = d
+	speed = s
+	jump_strength = j
 	$AnimatedSprite.self_modulate = color
 	tracking_camera = cam
 	up_control = uc

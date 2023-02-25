@@ -9,6 +9,8 @@ export(int) var player_id
 export(int) var weight
 export(int) var friction
 export(int) var drag
+export(int) var speed = 200
+export(int) var jump_strength = 200
 export(Color) var color
 
 

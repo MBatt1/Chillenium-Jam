@@ -15,8 +15,6 @@ func _ready():
 func _process(delta):
 	if activate == true:
 		$killbox/CollisionShape2D.disabled = true
-	else:
-		$killbox/CollisionShape2D.disabled = false
 
 func _on_killbox_body_entered(body):
 	body.kill_player()

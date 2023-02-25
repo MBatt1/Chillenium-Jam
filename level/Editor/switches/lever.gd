@@ -23,5 +23,6 @@ func switch_state():
 
 func _on_Area2D_body_entered(body):
 	switch_state()
-	get_node(connection).activate = true
+	if get_node(connection) != null:
+		get_node(connection).activate = true
 	pass # Replace with function body.

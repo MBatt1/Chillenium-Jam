@@ -11,7 +11,7 @@ position = Vector2( 0, -1 )
 script = ExtResource( 4 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 3 )]
-position = Vector2( -207, 21 )
+position = Vector2( -121, 253 )
 template = ExtResource( 2 )
 weight = 200
 friction = 200
@@ -19,7 +19,7 @@ drag = 400
 color = Color( 1, 0, 0, 1 )
 
 [node name="PlayerSpawner2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 753, -88 )
+position = Vector2( 839, 144 )
 template = ExtResource( 2 )
 player_id = 1
 weight = 200
@@ -28,19 +28,25 @@ drag = 400
 color = Color( 0, 0.529412, 1, 1 )
 
 [node name="Surface" parent="." instance=ExtResource( 5 )]
-margin_left = -329.0
-margin_top = 139.0
-margin_right = 1319.0
-margin_bottom = 261.0
+margin_left = -243.0
+margin_top = 371.0
+margin_right = 1405.0
+margin_bottom = 493.0
 
 [node name="Surface5" parent="." instance=ExtResource( 1 )]
-margin_left = 489.0
-margin_top = 57.0
-margin_right = 651.0
-margin_bottom = 139.0
+margin_left = 575.0
+margin_top = 289.0
+margin_right = 737.0
+margin_bottom = 371.0
 
 [node name="Surface2" parent="." instance=ExtResource( 5 )]
-margin_left = 651.0
-margin_top = 57.0
-margin_right = 1319.0
-margin_bottom = 190.0
+margin_left = 737.0
+margin_top = 289.0
+margin_right = 1405.0
+margin_bottom = 422.0
+
+[node name="Surface3" parent="." instance=ExtResource( 5 )]
+margin_left = 105.0
+margin_top = 324.0
+margin_right = 232.0
+margin_bottom = 661.0

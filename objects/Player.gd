@@ -58,6 +58,8 @@ func _physics_process(delta):
 		if Input.is_action_pressed(up_control) and alive == true:
 			$AnimatedSprite.play("jump")
 			speed_y = -jump_strength
+		else:
+			speed_y = 0
 	if alive == true:
 		if Input.is_action_pressed(right_control):
 			$AnimatedSprite.flip_h = true

@@ -44,3 +44,6 @@ color = Color( 0, 0.529412, 1, 1 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 685, 389 )
+weight = 50
+friction = 50
+drag = 50

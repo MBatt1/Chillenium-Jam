@@ -76,6 +76,9 @@ func _physics_process(delta):
 	var velocity = Vector2(speed_x, speed_y)
 	move_and_slide(velocity, Vector2.UP)
 
+func kill_player():
+	$AnimatedSprite.hide()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if tracking_camera:

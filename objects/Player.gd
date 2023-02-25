@@ -46,8 +46,9 @@ func add_drag(speed, decrementer):
 func _physics_process(delta):
 	#if speed_x < 10:
 		#$AnimatedSprite.play("default")
-	if is_on_floor() and speed_x <10:
+	if is_on_floor() and abs(speed_x) <10:
 		$AnimatedSprite.play("default")
+		$AnimatedSprite.flip_h = false
 	if not is_on_floor():
 		speed_y += weight*delta
 	else:
@@ -55,10 +56,14 @@ func _physics_process(delta):
 			$AnimatedSprite.play("jump")
 			speed_y = -200
 	if Input.is_action_pressed(right_control):
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.flip_h = true
+		if is_on_floor():
+			$AnimatedSprite.play("walk")
 		speed_x = 200
 	if Input.is_action_pressed(left_control):
-		$AnimatedSprite.play("walk")
+		$AnimatedSprite.flip_h = false
+		if is_on_floor():
+			$AnimatedSprite.play("walk")
 		speed_x = -200
 	if not is_on_floor():
 		speed_x = add_drag(speed_x,drag*delta)

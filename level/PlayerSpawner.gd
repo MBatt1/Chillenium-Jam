@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 export(Resource) var template
+export(int) var player_id
 export(int) var weight
 export(int) var friction
 export(int) var drag
@@ -17,7 +18,13 @@ func _ready():
 
 func spawn(level, cam):
 	var copy = template.instance()
-	copy.setup(weight, friction, drag, cam)
+	if player_id == 0:
+		copy.setup(weight, friction, drag, cam, "p1_up", "p1_right", "p1_down", "p1_left")
+	elif player_id == 1:
+		copy.setup(weight, friction, drag, cam, "p2_up", "p2_right", "p2_down", "p2_left")
+	else:
+		print("Invalid player id or no id was specified!")
+	
 	level.add_child(copy)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

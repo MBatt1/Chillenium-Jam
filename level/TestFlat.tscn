@@ -26,12 +26,6 @@ rect_pivot_offset = Vector2( 1350, -258 )
 position = Vector2( 684.5, 606 )
 shape = SubResource( 1 )
 
-[node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
-template = ExtResource( 2 )
-weight = 200
-friction = 200
-drag = 400
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( -28, -204 )
 
@@ -45,3 +39,10 @@ margin_top = 555.0
 margin_right = 600.0
 margin_bottom = 740.0
 rect_pivot_offset = Vector2( 1350, -258 )
+
+[node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
+template = ExtResource( 2 )
+player_id = 1
+weight = 200
+friction = 200
+drag = 400

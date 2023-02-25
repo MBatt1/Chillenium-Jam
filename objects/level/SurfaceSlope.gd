@@ -18,22 +18,25 @@ export (Type) var type
 func _ready():
 	var x_size = abs(margin_left-margin_right)
 	var y_size = abs(margin_top-margin_bottom)
+	var points = PoolVector2Array()
 	if type == Type.DOWN_RIGHT:
-		$Polygon2D.polygon[0] = Vector2(x_size, 0)
-		$Polygon2D.polygon[1] = Vector2(x_size, y_size)
-		$Polygon2D.polygon[2] = Vector2(0, y_size)
+		points.append(Vector2(x_size, 0))
+		points.append(Vector2(x_size, y_size))
+		points.append(Vector2(0, y_size))
 	elif type == Type.DOWN_LEFT:
-		$Polygon2D.polygon[0] = Vector2(0, 0)
-		$Polygon2D.polygon[1] = Vector2(x_size, y_size)
-		$Polygon2D.polygon[2] = Vector2(0, y_size)
+		points.append(Vector2(0, 0))
+		points.append(Vector2(x_size, y_size))
+		points.append(Vector2(0, y_size))
 	elif type == Type.UP_RIGHT:
-		$Polygon2D.polygon[0] = Vector2(0, 0)
-		$Polygon2D.polygon[1] = Vector2(x_size, 0)
-		$Polygon2D.polygon[2] = Vector2(x_size, y_size)
+		points.append(Vector2(0, 0))
+		points.append(Vector2(x_size, 0))
+		points.append(Vector2(x_size, y_size))
 	elif type == Type.UP_LEFT:
-		$Polygon2D.polygon[0] = Vector2(0, 0)
-		$Polygon2D.polygon[1] = Vector2(x_size, 0)
-		$Polygon2D.polygon[2] = Vector2(0, y_size)
+		points.append(Vector2(0, 0))
+		points.append(Vector2(x_size, 0))
+		points.append(Vector2(0, y_size))
+	$Polygon2D.polygon = points
+	$StaticBody2D/CollisionPolygon2D.polygon = points
 	
 
 

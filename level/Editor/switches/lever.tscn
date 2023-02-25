@@ -1,20 +1,28 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://level/Editor/switches/lever.gd" type="Script" id=1]
-[ext_resource path="res://level/Editor/switches/on.png" type="Texture" id=2]
-[ext_resource path="res://level/Editor/switches/off.png" type="Texture" id=3]
+[ext_resource path="res://level/Editor/switches/lever.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17, 15 )
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 128, 256 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 128, 256 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "off",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "on",
 "speed": 5.0
@@ -26,11 +34,11 @@ script = ExtResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -1, 17 )
-shape = SubResource( 1 )
+position = Vector2( 0, -26 )
+shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1, 0 )
+position = Vector2( 0, -94 )
 frames = SubResource( 2 )
 animation = "off"
 

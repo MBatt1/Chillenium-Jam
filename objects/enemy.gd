@@ -32,6 +32,11 @@ func _physics_process(delta):
 	var velocity = Vector2(speed_x, speed_y)
 	move_and_slide(velocity, Vector2.UP)
 
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 	#pass
+
+func _on_Area2D_body_entered(body):
+	body.kill_player()

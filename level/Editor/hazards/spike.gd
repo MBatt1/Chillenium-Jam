@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-
+export(bool) var v_flip
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,7 +17,7 @@ func _process(delta):
 		$killbox/CollisionShape2D.disabled = true
 	else:
 		$killbox/CollisionShape2D.disabled = false
-
+	$Sprite.flip_v = v_flip
+	
 func _on_killbox_body_entered(body):
 	body.kill_player()
-	pass # Replace with function body.

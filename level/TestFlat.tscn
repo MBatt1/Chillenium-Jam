@@ -52,14 +52,15 @@ friction = 200
 drag = 400
 color = Color( 0, 0.529412, 1, 1 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
+[node name="enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 685, 389 )
 weight = 50
 friction = 50
 drag = 50
 
 [node name="spikebody" parent="." instance=ExtResource( 5 )]
-position = Vector2( 416, 391 )
+position = Vector2( 411, 327 )
+v_flip = true
 
 [node name="lever" parent="." instance=ExtResource( 6 )]
 position = Vector2( 138, 392 )

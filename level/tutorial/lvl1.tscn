@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/level/Surface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/level/SurfaceSlope.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level/Editor/activateable/MovableObject.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level/Editor/switches/lever.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
@@ -51,18 +52,6 @@ margin_top = -248.0
 margin_right = -2349.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
-
-[node name="Door" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = -1296.0
-margin_top = -613.0
-margin_right = -1276.0
-margin_bottom = -515.0
-
-[node name="Door 2" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1614.0
-margin_top = -596.0
-margin_right = 1634.0
-margin_bottom = -504.0
 
 [node name="Platform2" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -2233.0
@@ -263,9 +252,11 @@ type = 1
 
 [node name="lever" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1304, -33 )
+connection = NodePath("../P2 Door")
 
 [node name="lever2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1995, 39 )
+connection = NodePath("../P1 Door")
 
 [node name="Label" type="Label" parent="."]
 margin_left = 2393.0
@@ -293,8 +284,28 @@ margin_bottom = -133.0
 text = "Use W to Jump!"
 
 [node name="Label4" type="Label" parent="."]
-margin_left = 2103.0
-margin_top = -92.0
-margin_right = 2204.0
-margin_bottom = -33.0
-text = "Use W to Jump!"
+margin_left = 2101.0
+margin_top = -115.0
+margin_right = 2202.0
+margin_bottom = -56.0
+text = "Use \"Up Arrow\"
+to Jump!"
+align = 1
+
+[node name="P1 Door" parent="." instance=ExtResource( 6 )]
+margin_left = -1292.0
+margin_top = -563.0
+margin_right = -1276.0
+margin_bottom = -375.0
+speed = Vector2( 0, -50 )
+y_final = 100
+y_offset = 5
+
+[node name="P2 Door" parent="." instance=ExtResource( 6 )]
+margin_left = 1619.0
+margin_top = -562.0
+margin_right = 1636.0
+margin_bottom = -353.0
+speed = Vector2( 0, -50 )
+y_final = 100
+y_offset = 5

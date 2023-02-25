@@ -1,13 +1,12 @@
 extends Node2D
 
+var heart_res = preload("res://objects/projectile/Heart.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 export(Resource) var level_template
 var level
 var player1
 var player2
+var heart
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +16,12 @@ func _ready():
 	var spawns = level.get_player_spawns()
 	player1 = spawns[0].spawn(level, $LVC/Viewport/Cam)
 	player2 = spawns[1].spawn(level, $RVC/Viewport/Cam)
+	heart = heart_res.instance()
+	level.add_child(heart)
+	if level.heart_start == 0:
+		heart.possessor = player1
+	else:
+		heart.possessor = player2
 	$LVC/Viewport/Cam.make_current()
 	$RVC/Viewport/Cam.make_current()
 

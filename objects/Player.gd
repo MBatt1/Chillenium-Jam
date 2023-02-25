@@ -7,6 +7,8 @@ extends KinematicBody2D
 export(int) var weight
 export(int) var friction
 export(int) var drag
+export(int) var speed = 200
+export(int) var jump_strength = 200
 
 var speed_x = 0
 var speed_y = 0
@@ -20,10 +22,12 @@ var right_control
 var down_control
 var left_control
 
-func setup(w, f, d, color, cam, uc, rc, dc, lc):
+func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc):
 	weight = w
 	friction = f
 	drag = d
+	speed = s
+	jump_strength = j
 	$AnimatedSprite.self_modulate = color
 	tracking_camera = cam
 	up_control = uc
@@ -54,17 +58,17 @@ func _physics_process(delta):
 	else:
 		if Input.is_action_pressed(up_control):
 			$AnimatedSprite.play("jump")
-			speed_y = -200
+			speed_y = -jump_strength
 	if Input.is_action_pressed(right_control):
 		$AnimatedSprite.flip_h = true
 		if is_on_floor():
 			$AnimatedSprite.play("walk")
-		speed_x = 200
+		speed_x = speed
 	if Input.is_action_pressed(left_control):
 		$AnimatedSprite.flip_h = false
 		if is_on_floor():
 			$AnimatedSprite.play("walk")
-		speed_x = -200
+		speed_x = -speed
 	if not is_on_floor():
 		speed_x = add_drag(speed_x,drag*delta)
 	else:

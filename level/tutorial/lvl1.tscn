@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/level/Surface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/level/SurfaceSlope.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level/Editor/switches/lever.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,224 +31,270 @@ speed = 225
 jump_strength = 600
 color = Color( 0, 0.529412, 1, 1 )
 
-[node name="Middle Left" parent="." instance=ExtResource( 3 )]
+[node name="Level Geometry" type="Node2D" parent="."]
+
+[node name="Middle Left" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -2418.0
 margin_right = -1491.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 808, 118 )
 
-[node name="Middle Left2" parent="." instance=ExtResource( 3 )]
+[node name="Middle Left2" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1335.0
 margin_right = 0.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 808, 118 )
 
-[node name="Surface" parent="." instance=ExtResource( 3 )]
+[node name="Surface" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -2418.0
 margin_top = -248.0
 margin_right = -2349.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Platform" parent="." instance=ExtResource( 3 )]
+[node name="Door" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1296.0
-margin_top = -518.0
+margin_top = -613.0
 margin_right = -1276.0
-margin_bottom = -375.0
+margin_bottom = -515.0
 
-[node name="Platform2" parent="." instance=ExtResource( 3 )]
+[node name="Door 2" parent="Level Geometry" instance=ExtResource( 3 )]
+margin_left = 1614.0
+margin_top = -596.0
+margin_right = 1634.0
+margin_bottom = -504.0
+
+[node name="Platform2" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -2233.0
 margin_top = -153.0
 margin_right = -2182.0
 margin_bottom = -129.0
 
-[node name="Surface2" parent="." instance=ExtResource( 3 )]
+[node name="Surface2" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -2059.0
 margin_top = -248.0
 margin_right = -2019.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Platform3" parent="." instance=ExtResource( 3 )]
+[node name="Platform3" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -2019.0
 margin_top = -66.0
 margin_right = -1968.0
 margin_bottom = -42.0
 
-[node name="Platform8" parent="." instance=ExtResource( 3 )]
+[node name="Platform8" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -2019.0
 margin_top = -66.0
 margin_right = -1968.0
 margin_bottom = 0.0
 
-[node name="Surface3" parent="." instance=ExtResource( 3 )]
+[node name="Surface3" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1760.0
 margin_top = -248.0
 margin_right = -1679.0
 margin_bottom = -214.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Biggins" parent="." instance=ExtResource( 3 )]
+[node name="Biggins" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1679.0
 margin_top = -248.0
 margin_right = -1491.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Surface4" parent="." instance=ExtResource( 3 )]
+[node name="Surface4" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1531.0
 margin_top = -375.0
 margin_right = -1491.0
 margin_bottom = -248.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Net 1" parent="." instance=ExtResource( 3 )]
+[node name="Net 1" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1491.0
 margin_top = 73.0
 margin_right = -1335.0
 margin_bottom = 75.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Surface6" parent="." instance=ExtResource( 3 )]
+[node name="Surface6" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1335.0
 margin_top = -375.0
 margin_right = -1276.0
 margin_bottom = -120.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Platform4" parent="." instance=ExtResource( 3 )]
+[node name="Platform4" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1491.0
 margin_top = -375.0
 margin_right = -1438.0
 margin_bottom = -363.0
 
-[node name="Platform7" parent="." instance=ExtResource( 3 )]
+[node name="Platform7" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1388.0
 margin_top = -252.0
 margin_right = -1335.0
 margin_bottom = -240.0
 
-[node name="Platform9" parent="." instance=ExtResource( 3 )]
+[node name="Platform9" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 2094.0
 margin_top = -72.0
 margin_right = 2147.0
 margin_bottom = -60.0
 
-[node name="Platform10" parent="." instance=ExtResource( 3 )]
+[node name="Platform10" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 2094.0
 margin_top = -218.0
 margin_right = 2147.0
 margin_bottom = -206.0
 
-[node name="Platform11" parent="." instance=ExtResource( 3 )]
+[node name="Platform11" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 1668.0
-margin_top = -381.0
+margin_top = -353.0
 margin_right = 1721.0
-margin_bottom = -369.0
+margin_bottom = -341.0
 
-[node name="Platform12" parent="." instance=ExtResource( 3 )]
-margin_left = 1771.0
+[node name="Platform12" parent="Level Geometry" instance=ExtResource( 3 )]
+margin_left = 1772.0
 margin_top = -218.0
-margin_right = 1824.0
+margin_right = 1825.0
 margin_bottom = -206.0
 
-[node name="Platform13" parent="." instance=ExtResource( 3 )]
+[node name="Platform13" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 1668.0
 margin_top = -64.0
 margin_right = 1721.0
 margin_bottom = -52.0
 
-[node name="Platform14" parent="." instance=ExtResource( 3 )]
+[node name="Platform14" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 1772.0
 margin_top = 72.0
 margin_right = 1825.0
 margin_bottom = 84.0
 
-[node name="Platform6" parent="." instance=ExtResource( 3 )]
+[node name="Platform6" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1491.0
 margin_top = -123.0
 margin_right = -1438.0
 margin_bottom = -111.0
 
-[node name="Platform5" parent="." instance=ExtResource( 3 )]
+[node name="Platform5" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1388.0
 margin_right = -1335.0
 margin_bottom = 12.0
 
-[node name="Net 2" parent="." instance=ExtResource( 3 )]
+[node name="Net 2" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 1669.0
 margin_top = 115.0
 margin_right = 1825.0
 margin_bottom = 117.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Surface7" parent="." instance=ExtResource( 3 )]
+[node name="Surface7" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = -1276.0
 margin_top = -285.0
 margin_right = -1044.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Surface8" parent="." instance=ExtResource( 3 )]
+[node name="Surface8" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 2035.0
 margin_top = -218.0
 margin_right = 2094.0
 margin_bottom = 72.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Surface9" parent="." instance=ExtResource( 3 )]
+[node name="Surface9" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 1825.0
 margin_top = -218.0
 margin_right = 2035.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Surface10" parent="." instance=ExtResource( 3 )]
+[node name="Surface10" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 1458.0
-margin_top = -381.0
+margin_top = -353.0
 margin_right = 1668.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Surface11" parent="." instance=ExtResource( 3 )]
+[node name="Surface11" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 1189.0
-margin_top = -252.0
+margin_top = -216.0
 margin_right = 1458.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Middle Right" parent="." instance=ExtResource( 3 )]
+[node name="Middle Right" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_right = 1668.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Middle Right2" parent="." instance=ExtResource( 3 )]
+[node name="Middle Right2" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 2286.0
 margin_right = 2423.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="Middle Right3" parent="." instance=ExtResource( 3 )]
+[node name="Middle Right3" parent="Level Geometry" instance=ExtResource( 3 )]
 margin_left = 1825.0
 margin_top = 72.0
 margin_right = 2286.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
 
-[node name="SurfaceSlope" parent="." instance=ExtResource( 5 )]
+[node name="SurfaceSlope" parent="Level Geometry" instance=ExtResource( 5 )]
 margin_left = 2094.0
 margin_right = 2286.0
 margin_bottom = 72.0
 
-[node name="SurfaceSlope2" parent="." instance=ExtResource( 5 )]
+[node name="SurfaceSlope2" parent="Level Geometry" instance=ExtResource( 5 )]
 margin_left = 1189.0
-margin_top = -381.0
+margin_top = -353.0
 margin_right = 1458.0
-margin_bottom = -252.0
+margin_bottom = -216.0
 
-[node name="SurfaceSlope3" parent="." instance=ExtResource( 5 )]
+[node name="SurfaceSlope3" parent="Level Geometry" instance=ExtResource( 5 )]
 margin_left = -1968.0
 margin_top = -66.0
 margin_right = -1679.0
 margin_bottom = 0.0
 type = 1
+
+[node name="lever" parent="." instance=ExtResource( 7 )]
+position = Vector2( -1304, -33 )
+
+[node name="lever2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1995, 39 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 2393.0
+margin_top = -144.0
+margin_right = 2494.0
+margin_bottom = -85.0
+text = "
+Use < and > to
+Move Around."
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -2509.0
+margin_top = -357.0
+margin_right = -2408.0
+margin_bottom = -298.0
+text = "
+Use A and D to
+Move Around."
+
+[node name="Label3" type="Label" parent="."]
+margin_left = -2252.0
+margin_top = -192.0
+margin_right = -2151.0
+margin_bottom = -133.0
+text = "Use W to Jump!"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 2103.0
+margin_top = -92.0
+margin_right = 2204.0
+margin_bottom = -33.0
+text = "Use W to Jump!"

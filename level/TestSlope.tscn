@@ -32,27 +32,6 @@ margin_top = 424.0
 margin_right = 1545.0
 margin_bottom = 546.0
 
-[node name="Surface2" parent="." instance=ExtResource( 1 )]
-margin_left = 825.0
-margin_top = 232.0
-margin_right = 901.0
-margin_bottom = 331.0
-type = 3
-
-[node name="Surface3" parent="." instance=ExtResource( 1 )]
-margin_left = 823.0
-margin_top = 352.0
-margin_right = 899.0
-margin_bottom = 404.0
-type = 1
-
-[node name="Surface4" parent="." instance=ExtResource( 1 )]
-margin_left = 926.0
-margin_top = 236.0
-margin_right = 1040.0
-margin_bottom = 324.0
-type = 2
-
 [node name="Surface5" parent="." instance=ExtResource( 1 )]
 margin_left = 928.0
 margin_top = 350.0

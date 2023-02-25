@@ -95,9 +95,9 @@ rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Platform2" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = -2183.0
-margin_top = -220.0
+margin_top = -235.0
 margin_right = -2055.0
-margin_bottom = -207.0
+margin_bottom = -222.0
 
 [node name="Platform15" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = -2131.0
@@ -289,13 +289,15 @@ margin_right = -2172.0
 margin_bottom = 0.0
 
 [node name="spikebody" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2151, -218 )
+position = Vector2( -2151, -189 )
+v_flip = true
 
 [node name="spikebody3" parent="." instance=ExtResource( 8 )]
 position = Vector2( -2082, 37 )
 
 [node name="spikebody2" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2087, -218 )
+position = Vector2( -2087, -189 )
+v_flip = true
 
 [node name="P1 Door" parent="." instance=ExtResource( 3 )]
 margin_left = -1292.0
@@ -316,5 +318,5 @@ y_final = 100
 y_offset = 5
 
 [node name="lever" parent="." instance=ExtResource( 5 )]
-position = Vector2( -2008, -25 )
+position = Vector2( -2011, -54 )
 connection = NodePath("../Level Geometry/P1 Elevator")

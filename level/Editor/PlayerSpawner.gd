@@ -23,9 +23,9 @@ func _ready():
 func spawn(level, cam):
 	var copy = template.instance()
 	if player_id == 0:
-		copy.setup(weight, friction, drag, color, cam, "p1_up", "p1_right", "p1_down", "p1_left")
+		copy.setup(weight, friction, drag, speed, jump_strength, color, cam, "p1_up", "p1_right", "p1_down", "p1_left")
 	elif player_id == 1:
-		copy.setup(weight, friction, drag, color, cam, "p2_up", "p2_right", "p2_down", "p2_left")
+		copy.setup(weight, friction, drag, speed, jump_strength, color, cam, "p2_up", "p2_right", "p2_down", "p2_left")
 	else:
 		print("Invalid player id or no id was specified!")
 	level.add_child(copy)

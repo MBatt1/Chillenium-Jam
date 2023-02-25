@@ -13,13 +13,17 @@ func _ready():
 func _process(delta):
 	pass
 
+
 func _physics_process(delta):
 	rotation = _rotate_a_little(delta*turn_speed)
-	move_and_collide(Vector2(cos(rotation), sin(rotation))*speed)
-	pass
+	var result = move_and_collide(Vector2(cos(rotation), sin(rotation))*speed)
+	if result:
+		print(result.collider.get_children())
+		
 
 func _desired_angle():
 	return Vector2(position.x-possessor.position.x, position.y-possessor.position.y).normalized().angle()-PI
+
 
 func _rotate_a_little(delta):
 	var desired = _desired_angle()
@@ -32,4 +36,3 @@ func _rotate_a_little(delta):
 		  out = rotation + max(-delta, rot)  
 	return out
 
-func _

@@ -28,6 +28,7 @@ func spawn(level, cam):
 		print("Invalid player id or no id was specified!")
 	level.add_child(copy)
 	copy.position = position	
+	return copy
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

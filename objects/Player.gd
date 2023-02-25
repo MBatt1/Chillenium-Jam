@@ -10,7 +10,11 @@ export(int) var drag
 
 var speed_x = 0
 var speed_y = 0
+var camera_on = true
 var tracking_camera
+var camera_y_track = 0
+var camera_y_track_speed = 30
+var tracked = false
 var up_control
 var right_control
 var down_control
@@ -66,4 +70,19 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if tracking_camera:
-		tracking_camera.position = position
+		if camera_on:
+			tracking_camera.position = position
+		else:
+			if abs(tracking_camera.position.y - camera_y_track) < 1:
+				tracking_camera.position.y = camera_y_track
+				tracked = true
+			elif tracking_camera.position.y < camera_y_track:
+				tracking_camera.position.y += camera_y_track_speed*delta
+			else:
+				tracking_camera.position.y -= camera_y_track_speed*delta
+
+
+
+
+
+

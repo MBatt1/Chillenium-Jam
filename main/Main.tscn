@@ -34,37 +34,41 @@ render_target_update_mode = 3
 [node name="Frame" type="Node2D" parent="."]
 position = Vector2( 0, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="Frame"]
+[node name="Left" type="ColorRect" parent="Frame"]
 margin_left = -20.0
 margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 740.0
 rect_pivot_offset = Vector2( -950, 20 )
 
-[node name="ColorRect2" type="ColorRect" parent="Frame"]
+[node name="Right" type="ColorRect" parent="Frame"]
 margin_left = 1260.0
 margin_top = -20.0
 margin_right = 1300.0
 margin_bottom = 740.0
 rect_pivot_offset = Vector2( 0, 265 )
 
-[node name="ColorRect3" type="ColorRect" parent="Frame"]
+[node name="Top" type="ColorRect" parent="Frame"]
 margin_left = -20.0
 margin_top = -20.0
 margin_right = 1300.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 80, 20 )
 
-[node name="ColorRect4" type="ColorRect" parent="Frame"]
+[node name="Bottom" type="ColorRect" parent="Frame"]
 margin_left = -20.0
 margin_top = 700.0
 margin_right = 1300.0
 margin_bottom = 740.0
 rect_pivot_offset = Vector2( 80, 20 )
 
-[node name="ColorRect5" type="ColorRect" parent="Frame"]
+[node name="Center" type="ColorRect" parent="Frame"]
 margin_left = 630.0
 margin_top = -20.0
 margin_right = 650.0
 margin_bottom = 740.0
 rect_pivot_offset = Vector2( -950, 20 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

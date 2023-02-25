@@ -10,6 +10,14 @@ export(int) var drag
 
 var speed_x = 0
 var speed_y = 0
+var tracking_camera
+
+func setup(w, f, d, cam):
+	weight = w
+	friction = f
+	drag = d
+	tracking_camera = cam
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -47,5 +55,5 @@ func _physics_process(delta):
 	move_and_slide(velocity, Vector2.UP)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	tracking_camera.position = position

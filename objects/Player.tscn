@@ -1,77 +1,32 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://sprites/temp_char1.png" type="Texture" id=1]
 [ext_resource path="res://objects/Player.gd" type="Script" id=2]
-[ext_resource path="res://sprites/walking/sprite resize.png" type="Texture" id=3]
+[ext_resource path="res://sprites/walking/walk2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/walking/walk1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/jumping/jump1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/jumping/jump3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/jumping/jump2.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=11]
 radius = 116.349
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 270, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 540, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 240, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 480, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 720, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 960, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1200, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1440, 0, 240, 270 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1680, 0, 240, 270 )
-
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 12 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": false,
 "name": "jump",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
-"speed": 30.0
+"speed": 16.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]

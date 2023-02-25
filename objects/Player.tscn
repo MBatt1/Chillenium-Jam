@@ -5,8 +5,9 @@
 [ext_resource path="res://sprites/jumping/CWJump.png" type="Texture" id=4]
 [ext_resource path="res://sprites/death/die1.png" type="Texture" id=8]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 28.5, 28.75 )
+[sub_resource type="CapsuleShape2D" id=24]
+radius = 17.0
+height = 26.0
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
@@ -135,11 +136,9 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 23.25 )
-shape = SubResource( 3 )
+shape = SubResource( 24 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -1, 24 )
+position = Vector2( 0, 2 )
 scale = Vector2( 0.671875, 0.609375 )
 frames = SubResource( 2 )
-animation = "walk"

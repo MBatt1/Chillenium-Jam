@@ -227,7 +227,7 @@ margin_bottom = 91.0
 
 [node name="Surface7" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = -1538.0
-margin_top = -287.0
+margin_top = -800.0
 margin_right = -1480.0
 margin_bottom = 1.0
 rect_pivot_offset = Vector2( 40, 40 )

@@ -44,7 +44,10 @@ func _on_Button4_pressed():
 
 
 func _on_Button5_pressed():
-	pass # Replace with function body.
+	$Transition.transition_to()
+	yield($Transition, "done")
+	Global.desired_stage = Global.stage5
+	var _ignore = get_tree().change_scene("res://main/Main.tscn")
 
 
 func _on_Button6_pressed():

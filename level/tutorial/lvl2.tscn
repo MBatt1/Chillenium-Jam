@@ -54,7 +54,7 @@ margin_top = -20.0
 margin_right = -1867.0
 margin_bottom = 0.0
 speed = Vector2( 0, -50 )
-y_final = 228
+y_final = 200
 y_offset = 10
 
 [node name="Polygon2D" type="Polygon2D" parent="Level Geometry/P1 Elevator"]
@@ -73,12 +73,12 @@ rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Platform2" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = -2183.0
-margin_top = -235.0
+margin_top = -425.0
 margin_right = -2055.0
 margin_bottom = -222.0
 
 [node name="Platform15" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = -2131.0
+margin_left = -2132.0
 margin_top = 70.0
 margin_right = -2030.0
 margin_bottom = 83.0
@@ -147,22 +147,36 @@ margin_right = 2147.0
 margin_bottom = -206.0
 
 [node name="Platform11" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 1668.0
-margin_top = -353.0
-margin_right = 1721.0
-margin_bottom = -341.0
+margin_left = 1772.0
+margin_top = -136.0
+margin_right = 1825.0
+margin_bottom = -124.0
 
 [node name="Platform12" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 1772.0
+margin_left = 1668.0
 margin_top = -218.0
-margin_right = 1825.0
+margin_right = 1721.0
 margin_bottom = -206.0
+
+[node name="L Wedge" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 1668.0
+margin_top = -218.0
+margin_right = 1721.0
+margin_bottom = -206.0
+speed = Vector2( -30, 0 )
+x_final = 100
+
+[node name="SurfaceSlope" parent="Level Geometry/L Wedge" instance=ExtResource( 4 )]
+margin_top = -135.0
+margin_right = 53.0
+margin_bottom = 0.0
+type = 1
 
 [node name="Platform13" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = 1668.0
-margin_top = -64.0
+margin_top = -12.0
 margin_right = 1721.0
-margin_bottom = -52.0
+margin_bottom = 0.0
 
 [node name="Platform14" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = 1772.0
@@ -182,24 +196,37 @@ margin_top = 9.0
 margin_right = -1678.0
 margin_bottom = 21.0
 
+[node name="Platform8" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = -1439.0
+margin_top = -137.0
+margin_right = -1386.0
+margin_bottom = -125.0
+
 [node name="Platform16" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = -1551.0
 margin_top = 79.0
 margin_right = -1498.0
 margin_bottom = 91.0
 
-[node name="Net 2" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 1669.0
-margin_top = 115.0
-margin_right = 1825.0
-margin_bottom = 117.0
-rect_pivot_offset = Vector2( 40, 40 )
-
 [node name="Surface7" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = -1538.0
 margin_top = -287.0
 margin_right = -1480.0
 margin_bottom = 1.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface12" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = -1306.0
+margin_top = -193.0
+margin_right = -1248.0
+margin_bottom = 1.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface13" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = -1440.0
+margin_top = -287.0
+margin_right = 1326.0
+margin_bottom = -285.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface8" parent="Level Geometry" instance=ExtResource( 6 )]
@@ -214,6 +241,13 @@ margin_left = 1825.0
 margin_top = -218.0
 margin_right = 2035.0
 margin_bottom = 0.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface14" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 1755.0
+margin_top = -336.0
+margin_right = 1884.0
+margin_bottom = -314.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface10" parent="Level Geometry" instance=ExtResource( 6 )]
@@ -270,27 +304,72 @@ position = Vector2( -2119, -206 )
 v_flip = true
 
 [node name="spikebody3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2081, 56 )
+position = Vector2( -2081, 58 )
 scale = Vector2( 0.78, 0.8 )
 
 [node name="P1 Door" parent="." instance=ExtResource( 3 )]
-margin_left = -1292.0
-margin_top = -563.0
-margin_right = -1276.0
-margin_bottom = -375.0
+margin_left = -1433.0
+margin_top = 102.0
+margin_right = -1306.0
+margin_bottom = 107.0
 speed = Vector2( 0, -50 )
 y_final = 100
 y_offset = 5
+
+[node name="SurfaceSlope" parent="P1 Door" instance=ExtResource( 4 )]
+margin_top = -40.0
+margin_right = 127.0
+margin_bottom = 0.0
 
 [node name="P2 Door" parent="." instance=ExtResource( 3 )]
-margin_left = 1619.0
-margin_top = -562.0
-margin_right = 1636.0
-margin_bottom = -353.0
+margin_left = 1884.0
+margin_top = -491.0
+margin_right = 1901.0
+margin_bottom = -218.0
 speed = Vector2( 0, -50 )
-y_final = 100
-y_offset = 5
+y_final = 65
+y_offset = 10
 
 [node name="lever" parent="." instance=ExtResource( 5 )]
-position = Vector2( -2009, -53 )
+position = Vector2( -2009, -60 )
+connection = NodePath("../P2 Door")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -1647.0
+margin_top = -206.0
+margin_right = -1607.0
+margin_bottom = -166.0
+text = "To Void"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = -902.0
+margin_top = -366.0
+margin_right = -837.0
+margin_bottom = -326.0
+text = "ROAD CLOSED"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 1946.0
+margin_top = -297.0
+margin_right = 2011.0
+margin_bottom = -257.0
+text = "Wait for Player 1..."
+
+[node name="lever2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1491, 39 )
+connection = NodePath("../Level Geometry/L Wedge")
+
+[node name="lever5" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1491, 39 )
+
+[node name="spikebody" parent="lever5" instance=ExtResource( 8 )]
+position = Vector2( 3310, -338 )
+v_flip = true
+
+[node name="lever3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1697, -52 )
+connection = NodePath("../P1 Door")
+
+[node name="lever4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1976, -258 )
 connection = NodePath("../Level Geometry/P1 Elevator")

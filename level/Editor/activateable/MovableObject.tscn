@@ -5,6 +5,7 @@
 [node name="Surface" type="ReferenceRect"]
 margin_right = 40.0
 margin_bottom = 40.0
+border_color = Color( 0.34902, 0.654902, 0.0705882, 1 )
 border_width = 2.0
 script = ExtResource( 1 )
 
@@ -16,3 +17,4 @@ position = Vector2( 19.5, 19 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+color = Color( 0.423529, 0.423529, 0.423529, 1 )

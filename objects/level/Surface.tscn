@@ -16,3 +16,4 @@ position = Vector2( 19.5, 19 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 4.0
 margin_bottom = 4.0
+color = Color( 0.705882, 0.705882, 0.705882, 1 )

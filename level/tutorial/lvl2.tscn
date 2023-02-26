@@ -15,7 +15,7 @@
 script = ExtResource( 1 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
-position = Vector2( -834, -86 )
+position = Vector2( 62, -115 )
 template = ExtResource( 7 )
 weight = 1000
 friction = 800
@@ -25,7 +25,7 @@ jump_strength = 600
 color = Color( 1, 0, 0, 1 )
 
 [node name="PlayerSpawner2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2361, -85 )
+position = Vector2( 4816, -85 )
 template = ExtResource( 7 )
 player_id = 1
 weight = 1000
@@ -36,6 +36,7 @@ jump_strength = 600
 color = Color( 0, 0.529412, 1, 1 )
 
 [node name="Level Geometry" type="Node2D" parent="."]
+position = Vector2( 2455, 0 )
 
 [node name="Middle Left" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = -2030.0
@@ -318,17 +319,17 @@ margin_right = -2172.0
 margin_bottom = 0.0
 
 [node name="spikebody" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2119, -206 )
+position = Vector2( 336, -206 )
 v_flip = true
 
 [node name="spikebody3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2081, 58 )
+position = Vector2( 374, 58 )
 scale = Vector2( 0.78, 0.8 )
 
 [node name="P1 Door" parent="." instance=ExtResource( 3 )]
-margin_left = -1433.0
+margin_left = 1022.0
 margin_top = 102.0
-margin_right = -1306.0
+margin_right = 1149.0
 margin_bottom = 107.0
 speed = Vector2( 0, -50 )
 y_final = 100
@@ -343,78 +344,79 @@ __meta__ = {
 }
 
 [node name="P2 Door" parent="." instance=ExtResource( 3 )]
-margin_left = 1884.0
+margin_left = 4339.0
 margin_top = -491.0
-margin_right = 1901.0
+margin_right = 4356.0
 margin_bottom = -218.0
 speed = Vector2( 0, -50 )
 y_final = 65
 y_offset = 10
 
 [node name="lever" parent="." instance=ExtResource( 5 )]
-position = Vector2( -2009, -55 )
+position = Vector2( 446, -55 )
 connection = NodePath("../P2 Door")
 
 [node name="lever2" parent="." instance=ExtResource( 5 )]
-position = Vector2( -1491, 39 )
+position = Vector2( 964, 39 )
 connection = NodePath("../Level Geometry/L Wedge")
 
 [node name="lever5" parent="." instance=ExtResource( 5 )]
-position = Vector2( -1491, 44 )
+position = Vector2( 964, 44 )
 
 [node name="lever3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1697, -47 )
+position = Vector2( 4152, -47 )
 connection = NodePath("../P1 Door")
 
 [node name="lever4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1976, -253 )
+position = Vector2( 4431, -253 )
 connection = NodePath("../Level Geometry/P1 Elevator")
 
 [node name="spikebody2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1819, -299 )
+position = Vector2( 4274, -299 )
 v_flip = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 2455, 0 )
 polygon = PoolVector2Array( 1101, -288, 1369, -422, 1373, -422, 1171.01, -319.519, 1101, -284 )
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D"]
 polygon = PoolVector2Array( 1101, -288, 1101, -284, 1373, -422, 1369, -422 )
 
 [node name="FallingObject" parent="." instance=ExtResource( 9 )]
-margin_left = 967.0
+margin_left = 3422.0
 margin_top = -222.0
-margin_right = 967.0
+margin_right = 3425.0
 margin_bottom = -159.0
-border_color = Color( 1, 0, 0, 0.247059 )
+border_color = Color( 1, 0, 0, 0 )
 editor_only = false
 speed = Vector2( 0, 400 )
 y_final = 1000
 y_offset = 20
 
 [node name="FallingObject2" parent="." instance=ExtResource( 9 )]
-margin_left = 587.0
+margin_left = 3042.0
 margin_top = -222.0
-margin_right = 587.0
+margin_right = 3045.0
 margin_bottom = -159.0
-border_color = Color( 1, 0, 0, 0.247059 )
+border_color = Color( 1, 0, 0, 0 )
 editor_only = false
 speed = Vector2( 0, 400 )
 y_final = 1000
 y_offset = 20
 
 [node name="FallingObject3" parent="." instance=ExtResource( 9 )]
-margin_left = 779.0
+margin_left = 3234.0
 margin_top = -222.0
-margin_right = 779.0
+margin_right = 3237.0
 margin_bottom = -159.0
-border_color = Color( 1, 0, 0, 0.247059 )
+border_color = Color( 1, 0, 0, 0 )
 editor_only = false
 speed = Vector2( 0, 400 )
 y_final = 1000
 y_offset = 20
 
 [node name="enemy" parent="." instance=ExtResource( 10 )]
-position = Vector2( -1191, -38 )
+position = Vector2( 1264, -38 )
 weight = 200
 friction = 750
 drag = 250

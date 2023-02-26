@@ -39,4 +39,6 @@ func _physics_process(delta):
 	#pass
 
 func _on_Area2D_body_entered(body):
-	body.kill_player()
+	if body.name == 'player' or body.name == '@player@2':
+		body.kill_player()
+	pass

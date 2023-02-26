@@ -10,6 +10,7 @@ var heart
 var heart_target
 var heart_side
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	level = level_template.instance()

@@ -29,6 +29,7 @@ var use_control
 var check = false
 
 var possess_heart = false
+var pound_state = false
 
 func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc, tc):
 	weight = w
@@ -59,10 +60,12 @@ func add_drag(sp, decrementer):
 func _physics_process(delta):
 	if is_on_floor() and abs(speed_x) <10:
 		$AnimatedSprite.play("default")
+		pound_state = false
 		$AnimatedSprite.flip_h = false
 	if not is_on_floor():
 		speed_y += weight*delta
-		if Input.is_action_pressed(down_control):
+		if Input.is_action_pressed(down_control) and alive == true:
+			pound_state = true
 			$AnimatedSprite.play("pound")
 			speed_x = 0
 			speed_y += 150
@@ -94,11 +97,14 @@ func _physics_process(delta):
 		var _result = move_and_slide(velocity, Vector2.UP)
 
 func kill_player():
-	$AnimatedSprite.play("death")
-	$AnimatedSprite.rotate(1440)
 	alive = false
-
+	$AnimatedSprite.play("death")
+	$CollisionShape2D.disabled = true
+	#speed = Vector2(0, -200)
+	yield(get_tree().create_timer(5), "timeout")
+	get_tree().change_scene("res://main/Main.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	if tracking_camera:
 		if camera_on:

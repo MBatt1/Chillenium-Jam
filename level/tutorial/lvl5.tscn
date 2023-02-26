@@ -123,7 +123,7 @@ margin_left = 4362.0
 margin_top = 384.0
 margin_right = 4377.0
 margin_bottom = 447.0
-speed = Vector2( 0, 200 )
+speed = Vector2( 0, 400 )
 y_final = 1000
 y_offset = 10
 
@@ -132,7 +132,7 @@ margin_left = 3756.0
 margin_top = 384.0
 margin_right = 3771.0
 margin_bottom = 447.0
-speed = Vector2( 0, 200 )
+speed = Vector2( 0, 400 )
 y_final = 1000
 y_offset = 10
 
@@ -140,7 +140,7 @@ y_offset = 10
 
 [node name="s3" parent="activateable" instance=ExtResource( 9 )]
 margin_left = 1895.0
-margin_top = 334.0
+margin_top = 555.0
 margin_right = 1954.0
 margin_bottom = 692.0
 speed = Vector2( 0, 100 )
@@ -176,7 +176,7 @@ y_offset = 10
 
 [node name="s1" parent="activateable" instance=ExtResource( 9 )]
 margin_left = 1572.0
-margin_top = 321.0
+margin_top = 341.0
 margin_right = 1612.0
 margin_bottom = 591.0
 speed = Vector2( 0, 100 )
@@ -446,6 +446,12 @@ margin_top = -573.0
 margin_right = 6227.0
 margin_bottom = -127.0
 
+[node name="Surface41" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 4365.0
+margin_top = -501.0
+margin_right = 4640.0
+margin_bottom = 120.0
+
 [node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
 position = Vector2( 314, -94 )
 template = ExtResource( 4 )
@@ -485,3 +491,5 @@ move_direction = 1
 [node name="enemy3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 4025, 638 )
 weight = 200
+speed = 200
+move_direction = 1

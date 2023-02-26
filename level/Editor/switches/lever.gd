@@ -22,7 +22,8 @@ func switch_state():
 #	pass
 
 func _on_Area2D_body_entered(body):
-	if "player" in body.name:
+	if "player" in body.name or "heart" in body.name:
+		print(body.name)
 		switch_state()
 		if get_node(connection) != null:
 			get_node(connection).activate = true

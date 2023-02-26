@@ -17,6 +17,8 @@ func _physics_process(delta):
 			emit_signal("player_impact", result.collider)
 		elif "enemy" in result.collider.name:
 			result.collider.die()
+		elif "lever" in result.collider.name:
+			result.collider.activate()
 		
 
 func _desired_angle():

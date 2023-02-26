@@ -62,6 +62,8 @@ func add_drag(sp, decrementer):
 func _physics_process(delta):
 	if not alive:
 		$AnimatedSprite.play("death")
+	if is_on_ceiling():
+		speed_y = 0
 	if is_on_floor() and abs(speed_x) <10:
 		$AnimatedSprite.play("default")
 		pound_state = false

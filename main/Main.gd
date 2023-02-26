@@ -35,11 +35,18 @@ func _ready():
 	heart.connect("player_impact", self, "_on_player_impact")
 	$LVC/Viewport/Cam.make_current()
 	$RVC/Viewport/Cam.make_current()
+	$sm.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if not $sm.playing:
+		$sm.play(0)
 	position = Vector2((get_viewport().size.x-1280)/2, 0)
+	if Input.is_action_pressed("ui_cancel"):
+		$Transition.transition_to()
+		yield($Transition, "done")
+		var _ignore = get_tree().change_scene("res://main/LevelSelectMenu.tscn")
 	check_end()
 	$HeartSprite.position = _fake_heart_position()
 	$HeartSprite.rotation = heart.rotation-PI/2
@@ -138,5 +145,4 @@ func check_end():
 		yield($Transition, "done")
 		var _ignore = get_tree().change_scene("res://main/LevelSelectMenu.tscn")
 		
-
 

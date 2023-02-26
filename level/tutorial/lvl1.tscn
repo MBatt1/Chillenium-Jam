@@ -252,11 +252,11 @@ margin_bottom = 0.0
 type = 1
 
 [node name="lever" parent="." instance=ExtResource( 7 )]
-position = Vector2( -1318, -39 )
+position = Vector2( -1318, -35 )
 connection = NodePath("../P2 Door")
 
 [node name="lever2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1986, 33 )
+position = Vector2( 1994, 37 )
 connection = NodePath("../P1 Door")
 
 [node name="Label" type="Label" parent="."]

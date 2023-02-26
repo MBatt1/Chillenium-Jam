@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/on.png-62653474726f5ec2428bdf4e4760788d.stex"
+path="res://.import/mahine1.png-f26190f5d9b73cf87266c6793582cffb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/Editor/switches/on.png"
-dest_files=[ "res://.import/on.png-62653474726f5ec2428bdf4e4760788d.stex" ]
+source_file="res://objects/level/mahine1.png"
+dest_files=[ "res://.import/mahine1.png-f26190f5d9b73cf87266c6793582cffb.stex" ]
 
 [params]
 

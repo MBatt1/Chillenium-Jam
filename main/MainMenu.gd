@@ -1,7 +1,5 @@
 extends Node2D
 
-var logo1_y
-var logo2_y
 
 func _on_PlayButton_pressed():
 	$Transition.transition_to()
@@ -17,11 +15,6 @@ func change_scene(target):
 	var _ignore = get_tree().change_scene(target)
 
 func _ready():
-	logo1_y = $Sprite.position.y
-	logo2_y = $Sprite2.position.y
 	$bgm.play(Global.song_position)
 	if Global.song_position != 0:
 		$Transition.transition_from()
-
-func _process(delta):
-	pass

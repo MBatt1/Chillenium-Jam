@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/anvio.mp3-59d6734c8d3fe7754560da5ae9ff050a.mp3str"
+
+[deps]
+
+source_file="res://music/anvio.mp3"
+dest_files=[ "res://.import/anvio.mp3-59d6734c8d3fe7754560da5ae9ff050a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

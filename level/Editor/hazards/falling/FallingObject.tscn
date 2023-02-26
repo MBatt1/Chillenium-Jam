@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://level/Editor/hazards/falling/FallingObject.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/hazards/falling/anvil.png" type="Texture" id=2]
+[ext_resource path="res://music/anvio.mp3" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8.3, 5.7 )
@@ -24,6 +25,9 @@ script = ExtResource( 1 )
 position = Vector2( 1.5, 35.5 )
 scale = Vector2( 5, 5 )
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StaticBody2D/kill"]
+stream = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

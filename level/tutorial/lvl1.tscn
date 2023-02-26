@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://objects/level/SurfaceSlope.tscn" type="PackedScene" id=5]
 [ext_resource path="res://level/Editor/activateable/MovableObject.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level/Editor/switches/lever.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level/Editor/switches/pressure_plate.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -251,11 +252,11 @@ margin_bottom = 0.0
 type = 1
 
 [node name="lever" parent="." instance=ExtResource( 7 )]
-position = Vector2( -1304, -33 )
+position = Vector2( -1318, -39 )
 connection = NodePath("../P2 Door")
 
 [node name="lever2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1995, 39 )
+position = Vector2( 1986, 33 )
 connection = NodePath("../P1 Door")
 
 [node name="Label" type="Label" parent="."]
@@ -301,6 +302,15 @@ speed = Vector2( 0, -50 )
 y_final = 100
 y_offset = 5
 
+[node name="P1 Final Door" parent="." instance=ExtResource( 6 )]
+margin_left = -845.0
+margin_top = -884.0
+margin_right = -837.0
+margin_bottom = 0.0
+speed = Vector2( 0, -75 )
+y_final = 250
+y_offset = 5
+
 [node name="P2 Door" parent="." instance=ExtResource( 6 )]
 margin_left = 1619.0
 margin_top = -562.0
@@ -309,3 +319,38 @@ margin_bottom = -353.0
 speed = Vector2( 0, -50 )
 y_final = 100
 y_offset = 5
+
+[node name="pressure_plate" parent="." instance=ExtResource( 8 )]
+position = Vector2( -950, -33 )
+connection = NodePath("../P1 Final Door")
+
+[node name="P2 Final Door2" parent="." instance=ExtResource( 6 )]
+margin_left = 1037.0
+margin_top = -884.0
+margin_right = 1045.0
+margin_bottom = 0.0
+speed = Vector2( 0, -75 )
+y_final = 250
+y_offset = 5
+
+[node name="pressure_plate2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1113, -33 )
+connection = NodePath("../P2 Final Door2")
+
+[node name="Label5" type="Label" parent="."]
+margin_left = -1028.0
+margin_top = -390.0
+margin_right = -873.0
+margin_bottom = -359.0
+text = "Press S While Mid-Air to
+Perform a Stomp Attack"
+align = 1
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 1078.0
+margin_top = -389.0
+margin_right = 1233.0
+margin_bottom = -358.0
+text = "Press S While Mid-Air to
+Perform a Stomp Attack"
+align = 1

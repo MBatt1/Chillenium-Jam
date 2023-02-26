@@ -26,6 +26,8 @@ var down_control
 var left_control
 var use_control
 
+var check = false
+
 var possess_heart = false
 
 func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc, tc):
@@ -117,7 +119,8 @@ func has_heart(state):
 	else:
 		$HeartSprite.visible = false
 
-
+func end_ready_check():
+	check = true
 
 
 

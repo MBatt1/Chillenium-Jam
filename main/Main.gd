@@ -39,6 +39,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	position = Vector2((get_viewport().size.x-1280)/2, 0)
 	check_end()
 	$HeartSprite.position = _fake_heart_position()
 	$HeartSprite.rotation = heart.rotation-PI/2

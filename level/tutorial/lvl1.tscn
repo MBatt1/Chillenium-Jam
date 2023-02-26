@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
@@ -9,9 +9,24 @@
 [ext_resource path="res://level/Editor/switches/lever.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level/Editor/switches/pressure_plate.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/level/background.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/level/kill_plane.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/level/level_end.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Container" parent="." instance=ExtResource( 10 )]
+margin_left = -603.0
+margin_top = -1837.0
+margin_right = 7485.0
+margin_bottom = 4673.0
+
+[node name="Node2D2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3282, -104 )
+
+[node name="Node2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2827, -103 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
 position = Vector2( 31, -304 )
@@ -450,3 +465,9 @@ text = "Try Having Player 2
 Press RShift While
 Jumping to Curve Their Heart"
 align = 1
+
+[node name="Area2D2" parent="." instance=ExtResource( 11 )]
+position = Vector2( -382, 549 )
+
+[node name="Area2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5829, 558 )

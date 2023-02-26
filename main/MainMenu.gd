@@ -1,15 +1,5 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_PlayButton_pressed():
 	$Transition.transition_to()
 	yield($Transition, "done")
@@ -20,4 +10,4 @@ func _on_ExitButton_pressed():
 	get_tree().quit()
 
 func change_scene(target):
-	get_tree().change_scene(target)
+	var _ignore = get_tree().change_scene(target)

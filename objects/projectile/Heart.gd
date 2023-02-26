@@ -13,7 +13,10 @@ func _physics_process(delta):
 		rotation = _rotate_a_little(delta*dist_turn_speed)
 	var result = move_and_collide(Vector2(cos(rotation), sin(rotation))*speed)
 	if result:
-		emit_signal("player_impact", result.collider)
+		if "player" in result.collider.name:
+			emit_signal("player_impact", result.collider)
+		elif "enemy" in result.collider.name:
+			result.collider.die()
 		
 
 func _desired_angle():

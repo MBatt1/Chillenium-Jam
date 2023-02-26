@@ -12,10 +12,10 @@
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -204.0
-margin_top = -245.0
-margin_right = 1494.0
-margin_bottom = 922.0
+margin_left = -139.0
+margin_top = -223.0
+margin_right = 1559.0
+margin_bottom = 944.0
 color = Color( 0.0627451, 0.34902, 0.521569, 1 )
 
 [node name="MenuBG" parent="." instance=ExtResource( 4 )]
@@ -24,9 +24,9 @@ rotation = 0.666716
 
 [node name="PlayButton" type="Button" parent="."]
 margin_left = 462.0
-margin_top = 414.0
+margin_top = 443.0
 margin_right = 806.0
-margin_bottom = 498.0
+margin_bottom = 527.0
 rect_pivot_offset = Vector2( 182, 60 )
 theme = ExtResource( 2 )
 text = "PLAY!"
@@ -47,13 +47,13 @@ volume_db = -15.0
 max_distance = 50000.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 429, 239 )
-scale = Vector2( 1.03322, 1.03322 )
+position = Vector2( 550.25, 236.5 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 5 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 805, 156 )
-scale = Vector2( 1.06754, 1.06754 )
+position = Vector2( 808.25, 231.5 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 7 )
 
 [node name="Transition" parent="." instance=ExtResource( 3 )]

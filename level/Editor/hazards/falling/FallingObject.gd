@@ -38,6 +38,9 @@ func _on_Area2D_body_entered(body):
 		
 func _on_kill_body_entered(body):
 	if "player" in body.name and stop_all == false:
+		$StaticBody2D/kill/AudioStreamPlayer.play()
 		body.kill_player()
 	else:
+		if stop_all == false:
+			$StaticBody2D/kill/AudioStreamPlayer.play()
 		stop_all = true

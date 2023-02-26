@@ -21,14 +21,14 @@ func _on_Button1_pressed():
 	$Transition.transition_to()
 	yield($Transition, "done")
 	Global.desired_stage = Global.stage1
-	get_tree().change_scene("res://main/Main.tscn")
+	var _ignore = get_tree().change_scene("res://main/Main.tscn")
 
 
 func _on_Button2_pressed():
 	$Transition.transition_to()
 	yield($Transition, "done")
 	Global.desired_stage = Global.stage2
-	get_tree().change_scene("res://main/Main.tscn")
+	var _ignore = get_tree().change_scene("res://main/Main.tscn")
 
 
 func _on_Button3_pressed():

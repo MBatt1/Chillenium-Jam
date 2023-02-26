@@ -1,3 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Sprite" type="Sprite"]
+[ext_resource path="res://objects/level/BackgroundSprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/level/background.gd" type="Script" id=2]
+
+[node name="Container" type="Container"]
+margin_right = 1283.0
+margin_bottom = 725.0
+script = ExtResource( 2 )
+sprite = ExtResource( 1 )

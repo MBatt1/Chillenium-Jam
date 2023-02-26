@@ -104,13 +104,12 @@ func kill_player():
 	if alive:
 		alive = false
 		speed_y = -150
-		$CollisionShape2D.disabled = true
 		collision_layer = 0
 		collision_mask = 0
 		yield(get_tree().create_timer(2), "timeout")
 		emit_signal("death")
 		yield(get_tree().create_timer(1), "timeout")
-		get_tree().change_scene("res://main/Main.tscn")
+		var _ignore = get_tree().change_scene("res://main/Main.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta):

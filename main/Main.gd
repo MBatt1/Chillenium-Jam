@@ -9,7 +9,7 @@ var player2
 var heart
 var heart_target
 var heart_side
-
+var gameover = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,6 +39,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	check_end()
 	$HeartSprite.position = _fake_heart_position()
 	$HeartSprite.rotation = heart.rotation-PI/2
 	if player1.tracked or player2.tracked:
@@ -125,5 +126,16 @@ func _on_p_death():
 	$Transition.transition_to()
 	yield($Transition, "done")
 
+
+func check_end():
+	if player1.check and player2.check and not gameover:
+		gameover = true
+		$HeartSprite.visible = true
+		heart_target = -1
+		yield(get_tree().create_timer(4), "timeout")
+		$Transition.transition_to()
+		yield($Transition, "done")
+		var _ignore = get_tree().change_scene("res://main/LevelSelectMenu.tscn")
+		
 
 

@@ -437,3 +437,9 @@ position = Vector2( 871, 261 )
 
 [node name="Kill Box R" parent="." instance=ExtResource( 11 )]
 position = Vector2( 4204, 254 )
+
+[node name="Area2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( -590, 74 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5092, 253 )

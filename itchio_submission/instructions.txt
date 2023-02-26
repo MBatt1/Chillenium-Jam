@@ -23,18 +23,19 @@ Controls:
 
 Player 1 (Left Screen):
 WAD movement
-S to hard drop
-Spacebar to fire the heart
+[S] to hard drop
+[Spacebar] to fire the heart
 
 Player 2 (Right Screen):
 Arrow Key movement
-Down Arrow to hard drop
-Right Shift to fire the heart
+[Down Arrow] to hard drop
+[Right Shift] to fire the heart
 
-Escape to quit levels
+[Escape] to quit levels
 
 
-Software Used
+Software Used:
+
 Godot Engine
 GitHub
 FL Studio

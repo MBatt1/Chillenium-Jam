@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/on.png-62653474726f5ec2428bdf4e4760788d.stex"
+path="res://.import/icon.png-5574891878b3f26b50194dd7fd237a43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/Editor/switches/on.png"
-dest_files=[ "res://.import/on.png-62653474726f5ec2428bdf4e4760788d.stex" ]
+source_file="res://itchio_submission/icon.png"
+dest_files=[ "res://.import/icon.png-5574891878b3f26b50194dd7fd237a43.stex" ]
 
 [params]
 

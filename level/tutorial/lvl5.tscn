@@ -1,0 +1,487 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://objects/level/Surface.tscn" type="PackedScene" id=1]
+[ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level/LevelScript.gd" type="Script" id=3]
+[ext_resource path="res://objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level/Editor/hazards/spike.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level/Editor/hazards/single_spike/v_single_spike.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level/Editor/hazards/single_spike/single_spike.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level/Editor/hazards/falling/FallingObject.tscn" type="PackedScene" id=8]
+[ext_resource path="res://level/Editor/activateable/MovableObject.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/level/level_end.tscn" type="PackedScene" id=10]
+[ext_resource path="res://level/Editor/switches/pressure_plate.tscn" type="PackedScene" id=11]
+[ext_resource path="res://level/Editor/switches/lever.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/enemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://objects/level/background.tscn" type="PackedScene" id=14]
+[ext_resource path="res://objects/level/kill_plane.tscn" type="PackedScene" id=15]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Container" parent="." instance=ExtResource( 14 )]
+margin_top = -842.0
+margin_right = 8246.0
+margin_bottom = 4066.0
+
+[node name="Area2D" parent="Container" instance=ExtResource( 15 )]
+position = Vector2( 4923, 1708 )
+
+[node name="Area2D2" parent="Container" instance=ExtResource( 15 )]
+position = Vector2( -632, 967 )
+
+[node name="hazards" type="Node" parent="."]
+
+[node name="spikebody" parent="hazards" instance=ExtResource( 5 )]
+position = Vector2( 646, 135 )
+
+[node name="spikebody2" parent="hazards" instance=ExtResource( 5 )]
+position = Vector2( 518, 135 )
+
+[node name="spikebody3" parent="hazards" instance=ExtResource( 5 )]
+position = Vector2( 902, 135 )
+
+[node name="spikebody4" parent="hazards" instance=ExtResource( 5 )]
+position = Vector2( 774, 135 )
+
+[node name="spikebody5" parent="hazards" instance=ExtResource( 5 )]
+position = Vector2( 1030, 135 )
+
+[node name="spikebody6" parent="hazards" instance=ExtResource( 5 )]
+position = Vector2( 1158, 135 )
+
+[node name="v_single_spike" parent="hazards" instance=ExtResource( 6 )]
+position = Vector2( 840, 594 )
+
+[node name="v_single_spike2" parent="hazards" instance=ExtResource( 6 )]
+position = Vector2( 765, 596 )
+h_flip = true
+color = false
+
+[node name="single_spike" parent="hazards" instance=ExtResource( 7 )]
+position = Vector2( 1132, 578 )
+color = false
+
+[node name="single_spike2" parent="hazards" instance=ExtResource( 7 )]
+position = Vector2( 1370, 572 )
+
+[node name="single_spike3" parent="hazards" instance=ExtResource( 7 )]
+position = Vector2( 1594, 569 )
+color = false
+
+[node name="FallingObject" parent="hazards" instance=ExtResource( 8 )]
+margin_left = 1254.0
+margin_top = 391.0
+margin_right = 1269.0
+margin_bottom = 454.0
+speed = Vector2( 0, 300 )
+y_final = 1000
+y_offset = 10
+
+[node name="FallingObject2" parent="hazards" instance=ExtResource( 8 )]
+margin_left = 1484.0
+margin_top = 388.0
+margin_right = 1499.0
+margin_bottom = 451.0
+speed = Vector2( 0, 300 )
+y_final = 1000
+y_offset = 10
+
+[node name="spikebody7" parent="hazards" instance=ExtResource( 5 )]
+position = Vector2( 2203, 670 )
+
+[node name="spikebody8" parent="hazards" instance=ExtResource( 5 )]
+position = Vector2( 2340, 670 )
+
+[node name="single_spike4" parent="hazards" instance=ExtResource( 7 )]
+position = Vector2( 2269, 550 )
+
+[node name="v_single_spike3" parent="hazards" instance=ExtResource( 6 )]
+position = Vector2( 4658, 143 )
+
+[node name="v_single_spike4" parent="hazards" instance=ExtResource( 6 )]
+position = Vector2( 4741, 307 )
+h_flip = true
+color = false
+
+[node name="v_single_spike5" parent="hazards" instance=ExtResource( 6 )]
+position = Vector2( 5754, 351 )
+
+[node name="v_single_spike6" parent="hazards" instance=ExtResource( 6 )]
+position = Vector2( 5754, 447 )
+
+[node name="v_single_spike7" parent="hazards" instance=ExtResource( 6 )]
+position = Vector2( 5896, 351 )
+h_flip = true
+
+[node name="v_single_spike8" parent="hazards" instance=ExtResource( 6 )]
+position = Vector2( 5894, 443 )
+h_flip = true
+
+[node name="FallingObject3" parent="hazards" instance=ExtResource( 8 )]
+margin_left = 4362.0
+margin_top = 384.0
+margin_right = 4377.0
+margin_bottom = 447.0
+speed = Vector2( 0, 200 )
+y_final = 1000
+y_offset = 10
+
+[node name="FallingObject4" parent="hazards" instance=ExtResource( 8 )]
+margin_left = 3756.0
+margin_top = 384.0
+margin_right = 3771.0
+margin_bottom = 447.0
+speed = Vector2( 0, 200 )
+y_final = 1000
+y_offset = 10
+
+[node name="activateable" type="Node" parent="."]
+
+[node name="s3" parent="activateable" instance=ExtResource( 9 )]
+margin_left = 1895.0
+margin_top = 334.0
+margin_right = 1954.0
+margin_bottom = 692.0
+speed = Vector2( 0, 100 )
+y_final = 1000
+y_offset = 10
+
+[node name="s5" parent="activateable" instance=ExtResource( 9 )]
+margin_left = 2663.0
+margin_top = 482.0
+margin_right = 2713.0
+margin_bottom = 686.0
+speed = Vector2( 0, 100 )
+y_final = 1000
+y_offset = 10
+
+[node name="s4" parent="activateable" instance=ExtResource( 9 )]
+margin_left = 4834.0
+margin_top = -73.0
+margin_right = 4874.0
+margin_bottom = 144.0
+speed = Vector2( 0, 100 )
+y_final = 1000
+y_offset = 10
+
+[node name="s2" parent="activateable" instance=ExtResource( 9 )]
+margin_left = 5747.0
+margin_top = -167.0
+margin_right = 5787.0
+margin_bottom = -23.0
+speed = Vector2( 0, 100 )
+y_final = 1000
+y_offset = 10
+
+[node name="s1" parent="activateable" instance=ExtResource( 9 )]
+margin_left = 1572.0
+margin_top = 321.0
+margin_right = 1612.0
+margin_bottom = 591.0
+speed = Vector2( 0, 100 )
+y_final = 1000
+y_offset = 10
+
+[node name="switches" type="Node" parent="."]
+
+[node name="s1" parent="switches" instance=ExtResource( 12 )]
+position = Vector2( 5583, -359 )
+connection = NodePath("../../activateable/s1")
+
+[node name="s2" parent="switches" instance=ExtResource( 12 )]
+position = Vector2( 578, 650 )
+connection = NodePath("../../activateable/s2")
+
+[node name="s3" parent="switches" instance=ExtResource( 11 )]
+position = Vector2( 5822, 446 )
+connection = NodePath("../../activateable/s3")
+
+[node name="s4" parent="switches" instance=ExtResource( 12 )]
+position = Vector2( 2611, 187 )
+connection = NodePath("../../activateable/s4")
+
+[node name="s5" parent="switches" instance=ExtResource( 11 )]
+position = Vector2( 4676, 654 )
+connection = NodePath("../../activateable/s5")
+
+[node name="Blocks" type="Node" parent="."]
+
+[node name="Surface" parent="Blocks" instance=ExtResource( 1 )]
+margin_right = 457.0
+margin_bottom = 1184.0
+rect_pivot_offset = Vector2( 332, 194 )
+
+[node name="Surface2" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 679.0
+margin_top = 1.0
+margin_right = 872.0
+margin_bottom = 32.0
+
+[node name="Surface3" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1119.0
+margin_top = 3.0
+margin_right = 1613.0
+margin_bottom = 332.0
+
+[node name="Surface4" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 449.0
+margin_top = 684.0
+margin_right = 4940.0
+margin_bottom = 1184.0
+
+[node name="Surface5" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 782.0
+margin_top = 562.0
+margin_right = 822.0
+margin_bottom = 684.0
+
+[node name="Surface6" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 454.0
+margin_top = 150.0
+margin_right = 1138.0
+margin_bottom = 190.0
+
+[node name="Surface7" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1112.0
+margin_top = 590.0
+margin_right = 1152.0
+margin_bottom = 695.0
+
+[node name="Surface8" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1347.0
+margin_top = 582.0
+margin_right = 1387.0
+margin_bottom = 695.0
+
+[node name="Surface9" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1572.0
+margin_top = 580.0
+margin_right = 1612.0
+margin_bottom = 695.0
+
+[node name="Surface10" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1886.0
+margin_top = -719.0
+margin_right = 1968.0
+margin_bottom = 561.0
+
+[node name="Surface11" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2119.0
+margin_top = 607.0
+margin_right = 2159.0
+margin_bottom = 690.0
+
+[node name="Surface12" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2251.0
+margin_top = 558.0
+margin_right = 2291.0
+margin_bottom = 689.0
+
+[node name="Surface13" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2383.0
+margin_top = 595.0
+margin_right = 2423.0
+margin_bottom = 690.0
+
+[node name="Surface14" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2655.0
+margin_top = -736.0
+margin_right = 2723.0
+margin_bottom = 485.0
+
+[node name="Surface15" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2489.0
+margin_top = 444.0
+margin_right = 2667.0
+margin_bottom = 463.0
+
+[node name="Surface16" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2272.0
+margin_top = 329.0
+margin_right = 2407.0
+margin_bottom = 344.0
+
+[node name="Surface17" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2041.0
+margin_top = 247.0
+margin_right = 2174.0
+margin_bottom = 264.0
+
+[node name="Surface18" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2549.0
+margin_top = 71.0
+margin_right = 2568.0
+margin_bottom = 237.0
+
+[node name="Surface19" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 2561.0
+margin_top = 221.0
+margin_right = 2675.0
+margin_bottom = 238.0
+
+[node name="Surface20" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 3560.0
+margin_top = 102.0
+margin_right = 4641.0
+margin_bottom = 330.0
+
+[node name="Surface21" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 4757.0
+margin_top = 125.0
+margin_right = 4939.0
+margin_bottom = 742.0
+
+[node name="Surface22" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 4779.0
+margin_top = -564.0
+margin_right = 4932.0
+margin_bottom = -60.0
+
+[node name="Surface23" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5151.0
+margin_top = 215.0
+margin_right = 5297.0
+margin_bottom = 249.0
+
+[node name="Surface24" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5482.0
+margin_top = 310.0
+margin_right = 5740.0
+margin_bottom = 740.0
+
+[node name="Surface25" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5482.0
+margin_top = 478.0
+margin_right = 6784.0
+margin_bottom = 1156.0
+
+[node name="Surface26" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5910.0
+margin_top = 308.0
+margin_right = 6046.0
+margin_bottom = 704.0
+
+[node name="Surface27" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 6386.0
+margin_top = -36.0
+margin_right = 6844.0
+margin_bottom = 521.0
+
+[node name="Surface28" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5480.0
+margin_top = -32.0
+margin_right = 6055.0
+margin_bottom = 19.0
+
+[node name="Surface29" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1829.0
+margin_top = 157.0
+margin_right = 1912.0
+margin_bottom = 188.0
+
+[node name="Surface30" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1592.0
+margin_top = 45.0
+margin_right = 1708.0
+margin_bottom = 75.0
+
+[node name="Surface31" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5475.0
+margin_top = -588.0
+margin_right = 5523.0
+margin_bottom = 20.0
+
+[node name="Surface32" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1833.0
+margin_top = 532.0
+margin_right = 1906.0
+margin_bottom = 559.0
+
+[node name="Surface33" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1584.0
+margin_top = 288.0
+margin_right = 1716.0
+margin_bottom = 315.0
+
+[node name="Surface34" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1711.0
+margin_top = 427.0
+margin_right = 1793.0
+margin_bottom = 451.0
+
+[node name="Surface35" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1794.0
+margin_top = -117.0
+margin_right = 1913.0
+margin_bottom = -93.0
+
+[node name="Surface36" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1796.0
+margin_top = -285.0
+margin_right = 1925.0
+margin_bottom = -257.0
+
+[node name="Surface37" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5517.0
+margin_top = -323.0
+margin_right = 5641.0
+margin_bottom = -303.0
+
+[node name="Surface38" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5624.0
+margin_top = -566.0
+margin_right = 5640.0
+margin_bottom = -303.0
+
+[node name="Surface39" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 5731.0
+margin_top = -167.0
+margin_right = 6842.0
+margin_bottom = -127.0
+
+[node name="Surface40" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 6187.0
+margin_top = -573.0
+margin_right = 6227.0
+margin_bottom = -127.0
+
+[node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
+position = Vector2( 314, -94 )
+template = ExtResource( 4 )
+weight = 1000
+friction = 800
+drag = 600
+speed = 225
+jump_strength = 600
+color = Color( 1, 0, 0, 1 )
+
+[node name="PlayerSpawner2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 6099, -246 )
+template = ExtResource( 4 )
+player_id = 1
+weight = 1000
+friction = 800
+drag = 600
+speed = 225
+jump_strength = 600
+color = Color( 0, 0.529412, 1, 1 )
+
+[node name="Node2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3177, 581 )
+
+[node name="enemy" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5847, -208 )
+weight = 200
+speed = 100
+move_direction = 1
+
+[node name="enemy2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5603, -68 )
+weight = 200
+speed = 100
+move_direction = 1
+
+[node name="enemy3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 4025, 638 )
+weight = 200

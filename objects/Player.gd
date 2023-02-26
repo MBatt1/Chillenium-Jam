@@ -10,6 +10,8 @@ export(int) var drag
 export(int) var speed = 200
 export(int) var jump_strength = 200
 
+signal death
+
 signal throw
 
 var alive = true
@@ -100,8 +102,9 @@ func kill_player():
 	alive = false
 	$AnimatedSprite.play("death")
 	$CollisionShape2D.disabled = true
-	#speed = Vector2(0, -200)
-	yield(get_tree().create_timer(5), "timeout")
+	yield(get_tree().create_timer(2), "timeout")
+	emit_signal("death")
+	yield(get_tree().create_timer(1), "timeout")
 	get_tree().change_scene("res://main/Main.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 

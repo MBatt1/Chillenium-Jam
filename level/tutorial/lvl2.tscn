@@ -224,9 +224,9 @@ margin_bottom = 1.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface13" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = -1440.0
+margin_left = -1436.0
 margin_top = -287.0
-margin_right = 1102.0
+margin_right = 1100.0
 margin_bottom = -285.0
 rect_pivot_offset = Vector2( 40, 40 )
 
@@ -300,13 +300,6 @@ margin_left = 1189.0
 margin_top = -353.0
 margin_right = 1458.0
 margin_bottom = -216.0
-
-[node name="SurfaceSlope4" parent="Level Geometry" instance=ExtResource( 4 )]
-margin_left = 1102.0
-margin_top = -423.0
-margin_right = 1371.0
-margin_bottom = -286.0
-type = 3
 
 [node name="SurfaceSlope3" parent="Level Geometry" instance=ExtResource( 4 )]
 margin_left = -2345.0
@@ -390,10 +383,10 @@ position = Vector2( 1819, -299 )
 v_flip = true
 
 [node name="FallingObject" parent="." instance=ExtResource( 9 )]
-margin_left = 779.0
-margin_top = -222.0
-margin_right = 794.0
-margin_bottom = -159.0
+margin_left = 2055.0
+margin_top = -460.0
+margin_right = 2070.0
+margin_bottom = -397.0
 speed = Vector2( 0, 250 )
 y_final = 100
 y_offset = 1
@@ -409,3 +402,9 @@ margin_left = 657.0
 margin_top = -222.0
 margin_right = 672.0
 margin_bottom = -159.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 1101, -288, 1369, -422, 1373, -422, 1171.01, -319.519, 1101, -284 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D"]
+polygon = PoolVector2Array( 1101, -288, 1101, -284, 1373, -422, 1369, -422 )

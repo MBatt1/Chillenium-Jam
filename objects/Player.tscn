@@ -4,11 +4,15 @@
 [ext_resource path="res://objects/Player.gd" type="Script" id=2]
 [ext_resource path="res://sprites/walking/WHITE.png" type="Texture" id=3]
 [ext_resource path="res://sprites/jumping/CWJump.png" type="Texture" id=4]
-[ext_resource path="res://sprites/death/die1.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=24]
 radius = 17.0
 height = 26.0
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 640, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
@@ -112,7 +116,7 @@ region = Rect2( 1536, 0, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ SubResource( 25 ) ],
 "loop": true,
 "name": "death",
 "speed": 5.0

@@ -17,6 +17,7 @@ script = ExtResource( 3 )
 
 [node name="Surface" parent="." instance=ExtResource( 7 )]
 speed = Vector2( -30, 30 )
+x_final = 100
 y_final = 100
 y_offset = 10
 
@@ -65,11 +66,11 @@ v_flip = true
 position = Vector2( 138, 392 )
 connection = NodePath("../Surface")
 
-[node name="Surface2" parent="." instance=ExtResource( 8 )]
-margin_left = 87.0
-margin_top = 1.0
-margin_right = 127.0
-margin_bottom = 41.0
+[node name="FallingObject" parent="." instance=ExtResource( 8 )]
+margin_left = 91.0
+margin_top = 4.0
+margin_right = 106.0
+margin_bottom = 67.0
 speed = Vector2( 0, 400 )
 y_final = 1000
-y_offset = 10
+y_offset = 20

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
@@ -10,12 +10,21 @@
 [ext_resource path="res://level/Editor/hazards/spike.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/level/SurfaceSlope.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/level/level_end.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/level/background.tscn" type="PackedScene" id=12]
+[ext_resource path="res://level/Editor/hazards/single_spike/v_single_spike.tscn" type="PackedScene" id=13]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="Container" parent="." instance=ExtResource( 12 )]
+margin_left = -646.0
+margin_top = -1380.0
+margin_right = 8297.0
+margin_bottom = 4626.0
+
 [node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
-position = Vector2( 584, -63 )
+position = Vector2( 42, -48 )
 template = ExtResource( 7 )
 weight = 1000
 friction = 800
@@ -25,7 +34,7 @@ jump_strength = 600
 color = Color( 1, 0, 0, 1 )
 
 [node name="PlayerSpawner2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3845, -173 )
+position = Vector2( 5928, -57 )
 template = ExtResource( 7 )
 player_id = 1
 weight = 1000
@@ -35,10 +44,10 @@ speed = 225
 jump_strength = 600
 color = Color( 0, 0.529412, 1, 1 )
 
-[node name="enemy" parent="PlayerSpawner2" instance=ExtResource( 10 )]
-position = Vector2( -377, 132 )
+[node name="enemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4110, -41 )
 weight = 150
-speed = 50
+speed = 60
 move_direction = 1
 
 [node name="Level Geometry" type="Node2D" parent="."]
@@ -51,15 +60,26 @@ rect_pivot_offset = Vector2( 808, 118 )
 
 [node name="Middle Left3" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = 786.0
-margin_right = 964.0
+margin_right = 1238.0
 margin_bottom = 312.0
 rect_pivot_offset = Vector2( 808, 118 )
 
-[node name="Middle Left4" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 894.0
-margin_top = -277.0
-margin_right = 964.0
-margin_bottom = 0.0
+[node name="Middle Left5" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 1392.0
+margin_right = 1482.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 808, 118 )
+
+[node name="Middle Left6" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 1637.0
+margin_right = 1727.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 808, 118 )
+
+[node name="Middle Left7" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 1890.0
+margin_right = 2865.0
+margin_bottom = 312.0
 rect_pivot_offset = Vector2( 808, 118 )
 
 [node name="P1 Elevator" parent="Level Geometry" instance=ExtResource( 3 )]
@@ -88,13 +108,21 @@ y_final = 185
 y_offset = 10
 
 [node name="P2 Start Door" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 4950.0
+margin_left = 5592.0
 margin_top = -340.0
-margin_right = 4964.0
+margin_right = 5606.0
 margin_bottom = 0.0
 speed = Vector2( 0, -50 )
 y_final = 185
 y_offset = 10
+
+[node name="spikebody" parent="Level Geometry" instance=ExtResource( 8 )]
+position = Vector2( 1437, -12 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="spikebody2" parent="Level Geometry" instance=ExtResource( 8 )]
+position = Vector2( 1682, -12 )
+scale = Vector2( 0.7, 0.7 )
 
 [node name="Surface" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_right = 221.0
@@ -102,55 +130,55 @@ margin_bottom = 312.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="P2 Start Bottom" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 5177.0
+margin_left = 5819.0
 margin_top = 103.0
-margin_right = 5398.0
+margin_right = 6040.0
 margin_bottom = 312.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface2" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4871.0
-margin_right = 4964.0
+margin_left = 5513.0
+margin_right = 5606.0
 margin_bottom = 311.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface3" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4351.0
+margin_left = 4993.0
 margin_top = 27.0
-margin_right = 4457.0
+margin_right = 5099.0
 margin_bottom = 311.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface4" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 3759.0
-margin_right = 4351.0
+margin_left = 4401.0
+margin_right = 4993.0
 margin_bottom = 311.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="P2 Start Top" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 5177.0
-margin_right = 5398.0
+margin_left = 5819.0
+margin_right = 6040.0
 margin_bottom = 58.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="P2 Start Left" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 5177.0
+margin_left = 5819.0
 margin_top = 58.0
-margin_right = 5261.0
+margin_right = 5903.0
 margin_bottom = 103.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="P2 Start Right" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 5318.0
+margin_left = 5960.0
 margin_top = 58.0
-margin_right = 5398.0
+margin_right = 6040.0
 margin_bottom = 103.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Platform15" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4789.0
+margin_left = 5431.0
 margin_top = 55.0
-margin_right = 4825.0
+margin_right = 5467.0
 margin_bottom = 68.0
 
 [node name="SurfaceSlope" parent="Level Geometry/Platform15" instance=ExtResource( 9 )]
@@ -161,33 +189,33 @@ margin_bottom = -55.0
 type = 1
 
 [node name="Platform16" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4500.0
+margin_left = 5142.0
 margin_top = 48.0
-margin_right = 4536.0
+margin_right = 5178.0
 margin_bottom = 61.0
 
 [node name="Platform17" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4574.0
+margin_left = 5216.0
 margin_top = 95.0
-margin_right = 4610.0
+margin_right = 5252.0
 margin_bottom = 108.0
 
 [node name="Platform19" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4644.0
+margin_left = 5286.0
 margin_top = 150.0
-margin_right = 4680.0
+margin_right = 5322.0
 margin_bottom = 163.0
 
 [node name="Platform21" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4716.0
+margin_left = 5358.0
 margin_top = 95.0
-margin_right = 4752.0
+margin_right = 5394.0
 margin_bottom = 108.0
 
 [node name="Platform23" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4789.0
+margin_left = 5431.0
 margin_top = -43.0
-margin_right = 4825.0
+margin_right = 5467.0
 margin_bottom = -30.0
 
 [node name="Platform24" parent="Level Geometry" instance=ExtResource( 6 )]
@@ -202,6 +230,12 @@ margin_top = 15.0
 margin_right = 786.0
 margin_bottom = 28.0
 
+[node name="Platform36" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 964.0
+margin_top = -60.0
+margin_right = 994.0
+margin_bottom = 0.0
+
 [node name="lever" parent="Level Geometry" instance=ExtResource( 5 )]
 position = Vector2( 761, 182 )
 connection = NodePath("../Spike Retract")
@@ -214,6 +248,12 @@ margin_bottom = 177.0
 
 [node name="Area2D" parent="Level Geometry/Platform26" instance=ExtResource( 4 )]
 position = Vector2( -203, 195 )
+
+[node name="Area2D2" parent="Level Geometry/Platform26" instance=ExtResource( 4 )]
+position = Vector2( 731, 197 )
+
+[node name="Node2D" parent="Level Geometry/Platform26/Area2D2" instance=ExtResource( 11 )]
+position = Vector2( 1392, -476 )
 
 [node name="Platform27" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = 737.0
@@ -233,98 +273,123 @@ margin_top = 103.0
 margin_right = 649.0
 margin_bottom = 116.0
 
+[node name="Platform37" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 1297.0
+margin_top = 17.0
+margin_right = 1333.0
+margin_bottom = 30.0
+
+[node name="Platform38" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 1543.0
+margin_top = 7.0
+margin_right = 1579.0
+margin_bottom = 20.0
+
+[node name="Platform39" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 1791.0
+margin_top = 30.0
+margin_right = 1827.0
+margin_bottom = 43.0
+
 [node name="Platform29" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4575.0
+margin_left = 5217.0
 margin_top = -95.0
-margin_right = 4611.0
+margin_right = 5253.0
 margin_bottom = -82.0
 
 [node name="Platform30" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4716.0
+margin_left = 5358.0
 margin_top = -95.0
-margin_right = 4752.0
+margin_right = 5394.0
 margin_bottom = -82.0
 
 [node name="Platform32" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4644.0
+margin_left = 5286.0
 margin_top = -145.0
-margin_right = 4680.0
+margin_right = 5322.0
 margin_bottom = -132.0
 
 [node name="Platform35" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 3367.0
-margin_top = -201.0
-margin_right = 3523.0
-margin_bottom = -110.0
+margin_left = 4008.0
+margin_top = -614.0
+margin_right = 4165.0
+margin_bottom = -111.0
 
 [node name="Platform33" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 3551.0
+margin_left = 4193.0
 margin_top = -1.0
-margin_right = 3552.0
+margin_right = 4194.0
 margin_bottom = 0.0
 
 [node name="Platform34" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 3365.0
+margin_left = 4007.0
 margin_top = -1.0
-margin_right = 3366.0
+margin_right = 4008.0
 margin_bottom = 0.0
 
 [node name="spikebody7" parent="Level Geometry" instance=ExtResource( 8 )]
-position = Vector2( 4404, 21 )
+position = Vector2( 5046, 13 )
 scale = Vector2( 0.83, 0.83 )
 
-[node name="lever" parent="Level Geometry/spikebody7" instance=ExtResource( 5 )]
-position = Vector2( -1221.69, -60.241 )
-connection = NodePath("../../Rat Door")
+[node name="lever2" parent="Level Geometry" instance=ExtResource( 5 )]
+position = Vector2( 4032, -29 )
+scale = Vector2( 0.83, 0.83 )
+connection = NodePath("../Rat Door")
 
 [node name="spikebody10" parent="Level Geometry" instance=ExtResource( 8 )]
-position = Vector2( 4125, -5 )
+position = Vector2( 4767, -5 )
 scale = Vector2( 0.33, 0.33 )
 
 [node name="spikebody13" parent="Level Geometry" instance=ExtResource( 8 )]
-position = Vector2( 4083, -5 )
+position = Vector2( 4725, -5 )
 scale = Vector2( 0.33, 0.33 )
 
 [node name="spikebody11" parent="Level Geometry" instance=ExtResource( 8 )]
-position = Vector2( 4167, -5 )
+position = Vector2( 4809, -5 )
 scale = Vector2( 0.33, 0.33 )
 
 [node name="spikebody12" parent="Level Geometry" instance=ExtResource( 8 )]
-position = Vector2( 4209, -5 )
+position = Vector2( 4851, -5 )
 scale = Vector2( 0.33, 0.33 )
 
 [node name="Spike Retract" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 4245.0
+margin_left = 4887.0
 margin_top = 1.0
-margin_right = 4351.0
+margin_right = 4993.0
 margin_bottom = 29.0
 speed = Vector2( 100, 0 )
 x_final = 105
-y_final = -50
-y_offset = -1
+
+[node name="Spike Retract2" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4994.0
+margin_top = -395.0
+margin_right = 5100.0
+margin_bottom = -31.0
+speed = Vector2( 0, 100 )
+y_final = 150
 
 [node name="Rat Door" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 3351.0
+margin_left = 3993.0
 margin_top = -201.0
-margin_right = 3366.0
+margin_right = 4008.0
 margin_bottom = 0.0
 speed = Vector2( 100, 100 )
 y_final = 205
 
 [node name="Middle Right" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 1888.0
-margin_right = 3555.0
+margin_left = 2865.0
+margin_right = 4197.0
 margin_bottom = 311.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Area2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 4414, 398 )
+position = Vector2( 5056, 398 )
 
 [node name="Area2D3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3407, 400 )
+position = Vector2( 4049, 400 )
 
 [node name="Area2D2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 5574, 398 )
+position = Vector2( 6216, 398 )
 
 [node name="spikebody3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 275, 299 )
@@ -335,11 +400,11 @@ position = Vector2( 381, 299 )
 scale = Vector2( 0.83, 0.83 )
 
 [node name="spikebody5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 5017, 299 )
+position = Vector2( 5659, 299 )
 scale = Vector2( 0.83, 0.83 )
 
 [node name="spikebody6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 5123, 299 )
+position = Vector2( 5765, 299 )
 scale = Vector2( 0.83, 0.83 )
 
 [node name="lever" parent="." instance=ExtResource( 5 )]
@@ -347,15 +412,168 @@ position = Vector2( 487, -35 )
 connection = NodePath("../Level Geometry/P2 Start Door")
 
 [node name="lever2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 5289, 68 )
+position = Vector2( 5931, 68 )
 connection = NodePath("../Level Geometry/P1 Start Door")
 
 [node name="Multi Left" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4593, -130 )
+position = Vector2( 5235, -130 )
 
 [node name="Multi Right" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4807, 20 )
+position = Vector2( 5449, 20 )
 
 [node name="Multi Bottom" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4592, 60 )
+position = Vector2( 5234, 60 )
 connection = NodePath("../Level Geometry/P1 Elevator")
+
+[node name="SurfaceSlope" parent="." instance=ExtResource( 9 )]
+margin_left = 3503.0
+margin_top = -614.0
+margin_right = 4008.0
+margin_bottom = -111.0
+type = 2
+
+[node name="Node" type="Node" parent="."]
+
+[node name="v_single_spike" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 998, -67 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike2" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 996, -83 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike3" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 994, -99 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike4" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 992, -115 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike5" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 990, -131 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike6" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 988, -147 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike7" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 986, -163 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike8" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 984, -179 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike9" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 982, -195 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike10" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 980, -211 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike11" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 978, -227 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike12" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 976, -243 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike13" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 974, -259 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="v_single_spike14" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1091, -67 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike15" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1093, -83 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike16" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1095, -99 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike17" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1097, -115 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike18" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1099, -131 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike19" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1101, -147 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike20" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1103, -163 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike21" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1105, -179 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike22" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1107, -195 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike23" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1109, -211 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike24" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1111, -227 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike25" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1113, -243 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="v_single_spike26" parent="Node" instance=ExtResource( 13 )]
+position = Vector2( 1115, -259 )
+scale = Vector2( 0.5, 0.5 )
+h_flip = true
+
+[node name="SurfaceSlope" parent="Node" instance=ExtResource( 9 )]
+margin_left = 964.0
+margin_top = -277.0
+margin_right = 994.0
+margin_bottom = -60.0
+type = 1
+
+[node name="SurfaceSlope2" parent="Node" instance=ExtResource( 9 )]
+margin_left = 1095.0
+margin_top = -277.0
+margin_right = 1125.0
+margin_bottom = -62.0
+
+[node name="Middle Left4" parent="Node" instance=ExtResource( 6 )]
+margin_left = 894.0
+margin_top = -277.0
+margin_right = 964.0
+margin_bottom = 0.0
+rect_pivot_offset = Vector2( 808, 118 )
+
+[node name="Middle Left8" parent="Node" instance=ExtResource( 6 )]
+margin_left = 1125.0
+margin_top = -728.0
+margin_right = 1195.0
+margin_bottom = -62.0
+rect_pivot_offset = Vector2( 808, 118 )

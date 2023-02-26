@@ -50,13 +50,13 @@ func _process(delta):
 		elif heart_side == 0:
 			heart.homing_target = $LVC/Viewport/Cam.position
 		else:
-			heart.homing_target = $RVC/Viewport/Cam.position - Vector2(640, $RVC/Viewport/Cam.position.y-$LVC/Viewport/Cam.position.y)
+			heart.homing_target = $RVC/Viewport/Cam.position - Vector2(640, 0)
 			
 	elif heart_target == 1:
 		if player1.tracked or player2.tracked:
 			heart.homing_target = player2.position
 		elif heart_side == 0:
-			heart.homing_target = $LVC/Viewport/Cam.position + Vector2(640, $LVC/Viewport/Cam.position.y-$RVC/Viewport/Cam.position.y)
+			heart.homing_target = $LVC/Viewport/Cam.position + Vector2(640, 0)
 		else:
 			heart.homing_target = $RVC/Viewport/Cam.position
 	
@@ -82,7 +82,7 @@ func _on_p1_throw():
 	$Timer.start()
 	$HeartSprite.visible = true
 	heart_target = 1
-	heart.rotation = Vector2(player1.speed_x, player1.speed_y).angle()
+	heart.rotation = Vector2(100, player1.speed_y).angle()
 	_process(0)
 
 	
@@ -90,7 +90,8 @@ func _on_p2_throw():
 	$Timer.start()
 	$HeartSprite.visible = true
 	heart_target = 0
-	heart.rotation = Vector2(player2.speed_x, player2.speed_y).angle()
+	heart.rotation = Vector2(-100, player2.speed_y).angle()
+	print(heart.rotation)
 	_process(0)
 
 

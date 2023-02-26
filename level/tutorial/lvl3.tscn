@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://level/Editor/activateable/MovableObject.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/level/kill_plane.tscn" type="PackedScene" id=4]
 [ext_resource path="res://level/Editor/switches/lever.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/level/Surface.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=7]
@@ -22,7 +23,7 @@ jump_strength = 600
 color = Color( 1, 0, 0, 1 )
 
 [node name="PlayerSpawner2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2361, -85 )
+position = Vector2( 4302, -98 )
 template = ExtResource( 7 )
 player_id = 1
 weight = 1000
@@ -35,9 +36,9 @@ color = Color( 0, 0.529412, 1, 1 )
 [node name="Level Geometry" type="Node2D" parent="."]
 
 [node name="Middle Left2" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 439.0
+margin_left = 435.0
 margin_right = 1745.0
-margin_bottom = 471.0
+margin_bottom = 312.0
 rect_pivot_offset = Vector2( 808, 118 )
 
 [node name="P1 Elevator" parent="Level Geometry" instance=ExtResource( 3 )]
@@ -57,31 +58,222 @@ polygon = PoolVector2Array( 53, -7, 53, -28, 57, -28, 57, -4, 53, -4 )
 position = Vector2( 29, -1 )
 polygon = PoolVector2Array( 62, -17, 75, -30, 78, -27, 65, -14 )
 
+[node name="P1 Start Door" parent="Level Geometry" instance=ExtResource( 3 )]
+margin_left = 435.0
+margin_top = -340.0
+margin_right = 449.0
+margin_bottom = 0.0
+speed = Vector2( 0, -50 )
+y_final = 185
+y_offset = 10
+
+[node name="P2 Start Door" parent="Level Geometry" instance=ExtResource( 3 )]
+margin_left = 4940.0
+margin_top = -340.0
+margin_right = 4954.0
+margin_bottom = 0.0
+speed = Vector2( 0, -50 )
+y_final = 185
+y_offset = 10
+
 [node name="Surface" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_right = 221.0
-margin_bottom = 471.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="P2 Start Bottom" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 5177.0
+margin_top = 103.0
+margin_right = 5398.0
+margin_bottom = 312.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface2" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4871.0
+margin_right = 4964.0
+margin_bottom = 311.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface3" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4351.0
+margin_top = 27.0
+margin_right = 4457.0
+margin_bottom = 311.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="P2 Start Top" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 5177.0
+margin_right = 5398.0
+margin_bottom = 58.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="P2 Start Left" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 5177.0
+margin_top = 58.0
+margin_right = 5261.0
+margin_bottom = 103.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="P2 Start Right" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 5318.0
+margin_top = 58.0
+margin_right = 5398.0
+margin_bottom = 103.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Platform15" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = -1513.0
-margin_top = 156.0
-margin_right = -1411.0
-margin_bottom = 169.0
+margin_left = 4789.0
+margin_top = 55.0
+margin_right = 4825.0
+margin_bottom = 68.0
+
+[node name="Platform16" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4500.0
+margin_top = 48.0
+margin_right = 4536.0
+margin_bottom = 61.0
+
+[node name="Platform17" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4574.0
+margin_top = 95.0
+margin_right = 4610.0
+margin_bottom = 108.0
+
+[node name="Platform19" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4644.0
+margin_top = 150.0
+margin_right = 4680.0
+margin_bottom = 163.0
+
+[node name="Platform21" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4716.0
+margin_top = 95.0
+margin_right = 4752.0
+margin_bottom = 108.0
+
+[node name="Platform23" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4789.0
+margin_top = -43.0
+margin_right = 4825.0
+margin_bottom = -30.0
+
+[node name="Platform24" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 5129.0
+margin_top = -252.0
+margin_right = 5165.0
+margin_bottom = -239.0
+
+[node name="Platform25" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 5170.0
+margin_top = -240.0
+margin_right = 5206.0
+margin_bottom = -227.0
+
+[node name="Platform26" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 5246.0
+margin_top = -232.0
+margin_right = 5282.0
+margin_bottom = -219.0
+
+[node name="Platform28" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 5115.0
+margin_top = -205.0
+margin_right = 5151.0
+margin_bottom = -192.0
+
+[node name="Platform29" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4575.0
+margin_top = -95.0
+margin_right = 4611.0
+margin_bottom = -82.0
+
+[node name="Platform30" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4716.0
+margin_top = -95.0
+margin_right = 4752.0
+margin_bottom = -82.0
+
+[node name="Platform32" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4644.0
+margin_top = -145.0
+margin_right = 4680.0
+margin_bottom = -132.0
+
+[node name="spikebody7" parent="Level Geometry" instance=ExtResource( 8 )]
+position = Vector2( 4404, 14 )
+scale = Vector2( 0.83, 0.83 )
+
+[node name="spikebody8" parent="Level Geometry" instance=ExtResource( 8 )]
+position = Vector2( 4164, -29 )
+scale = Vector2( 0.33, 0.33 )
+
+[node name="spikebody9" parent="Level Geometry" instance=ExtResource( 8 )]
+position = Vector2( 4164, -209 )
+scale = Vector2( 0.33, 0.33 )
+v_flip = true
+
+[node name="Spike Retract" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4245.0
+margin_top = 1.0
+margin_right = 4351.0
+margin_bottom = 29.0
+speed = Vector2( 100, 0 )
+x_final = 106
+y_final = -50
+y_offset = -1
+
+[node name="surface" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = 4143.0
+margin_top = -224.0
+margin_right = 4186.0
+margin_bottom = -215.0
+speed = Vector2( 40, 0 )
+x_final = 106
+y_final = -50
+y_offset = -1
 
 [node name="Middle Right" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = 1804.0
-margin_top = 108.0
-margin_right = 3472.0
-margin_bottom = 255.0
+margin_left = 1888.0
+margin_right = 4351.0
+margin_bottom = 311.0
 rect_pivot_offset = Vector2( 40, 40 )
 
+[node name="Area2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4414, 398 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 5574, 398 )
+
 [node name="spikebody3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 276, 459 )
+position = Vector2( 275, 299 )
 scale = Vector2( 0.83, 0.83 )
 
 [node name="spikebody4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 384, 459 )
+position = Vector2( 381, 299 )
+scale = Vector2( 0.83, 0.83 )
+
+[node name="spikebody5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 5017, 299 )
+scale = Vector2( 0.83, 0.83 )
+
+[node name="spikebody6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 5123, 299 )
 scale = Vector2( 0.83, 0.83 )
 
 [node name="lever" parent="." instance=ExtResource( 5 )]
-position = Vector2( -1327, -73 )
+position = Vector2( 487, -35 )
+connection = NodePath("../Level Geometry/P2 Start Door")
+
+[node name="lever2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 5289, 68 )
+connection = NodePath("../Level Geometry/P1 Start Door")
+
+[node name="Multi Left" parent="." instance=ExtResource( 5 )]
+position = Vector2( 4593, -130 )
+
+[node name="Multi Right" parent="." instance=ExtResource( 5 )]
+position = Vector2( 4807, 20 )
+
+[node name="Multi Bottom" parent="." instance=ExtResource( 5 )]
+position = Vector2( 4592, 60 )
+connection = NodePath("../Level Geometry/Spike Retract")

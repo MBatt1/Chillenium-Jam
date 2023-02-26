@@ -364,7 +364,7 @@ x_final = 105
 margin_left = 4994.0
 margin_top = -395.0
 margin_right = 5100.0
-margin_bottom = -31.0
+margin_bottom = -72.0
 speed = Vector2( 0, 100 )
 y_final = 150
 

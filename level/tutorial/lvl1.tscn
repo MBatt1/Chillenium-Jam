@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://level/Editor/activateable/MovableObject.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level/Editor/switches/lever.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level/Editor/switches/pressure_plate.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/enemy.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -23,7 +24,7 @@ jump_strength = 600
 color = Color( 1, 0, 0, 1 )
 
 [node name="PlayerSpawner2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2366, -68 )
+position = Vector2( 1557, -528 )
 template = ExtResource( 4 )
 player_id = 1
 weight = 1000
@@ -32,6 +33,14 @@ drag = 600
 speed = 225
 jump_strength = 600
 color = Color( 0, 0.529412, 1, 1 )
+
+[node name="enemy" parent="." instance=ExtResource( 9 )]
+position = Vector2( 764, -118 )
+weight = 200
+friction = 750
+drag = 250
+speed = 35
+machine = 1
 
 [node name="Level Geometry" type="Node2D" parent="."]
 
@@ -127,39 +136,39 @@ margin_right = -1335.0
 margin_bottom = -240.0
 
 [node name="Platform9" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 2094.0
+margin_left = 2371.0
 margin_top = -72.0
-margin_right = 2147.0
+margin_right = 2424.0
 margin_bottom = -60.0
 
 [node name="Platform10" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 2094.0
+margin_left = 2371.0
 margin_top = -218.0
-margin_right = 2147.0
+margin_right = 2424.0
 margin_bottom = -206.0
 
 [node name="Platform11" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1668.0
+margin_left = 1945.0
 margin_top = -353.0
-margin_right = 1721.0
+margin_right = 1998.0
 margin_bottom = -341.0
 
 [node name="Platform12" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1772.0
+margin_left = 2049.0
 margin_top = -218.0
-margin_right = 1825.0
+margin_right = 2102.0
 margin_bottom = -206.0
 
 [node name="Platform13" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1668.0
+margin_left = 1945.0
 margin_top = -64.0
-margin_right = 1721.0
+margin_right = 1998.0
 margin_bottom = -52.0
 
 [node name="Platform14" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1772.0
+margin_left = 2049.0
 margin_top = 72.0
-margin_right = 1825.0
+margin_right = 2102.0
 margin_bottom = 84.0
 
 [node name="Platform6" parent="Level Geometry" instance=ExtResource( 3 )]
@@ -174,9 +183,9 @@ margin_right = -1335.0
 margin_bottom = 12.0
 
 [node name="Net 2" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1669.0
+margin_left = 1946.0
 margin_top = 115.0
-margin_right = 1825.0
+margin_right = 2102.0
 margin_bottom = 117.0
 rect_pivot_offset = Vector2( 40, 40 )
 
@@ -188,60 +197,68 @@ margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface8" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 2035.0
+margin_left = 2312.0
 margin_top = -218.0
-margin_right = 2094.0
+margin_right = 2371.0
 margin_bottom = 72.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface9" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1825.0
+margin_left = 2102.0
 margin_top = -218.0
-margin_right = 2035.0
+margin_right = 2312.0
+margin_bottom = 0.0
+rect_pivot_offset = Vector2( 40, 40 )
+
+[node name="Surface13" parent="Level Geometry" instance=ExtResource( 3 )]
+margin_left = 793.0
+margin_top = -65.0
+margin_right = 803.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface10" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1458.0
+margin_left = 1735.0
 margin_top = -353.0
-margin_right = 1668.0
+margin_right = 1945.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Surface11" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1189.0
+margin_left = 1466.0
 margin_top = -216.0
-margin_right = 1458.0
+margin_right = 1735.0
 margin_bottom = 0.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Middle Right" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_right = 1668.0
+margin_left = 277.0
+margin_right = 1945.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Middle Right2" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 2286.0
-margin_right = 2423.0
+margin_left = 2563.0
+margin_right = 2700.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Middle Right3" parent="Level Geometry" instance=ExtResource( 3 )]
-margin_left = 1825.0
+margin_left = 2102.0
 margin_top = 72.0
-margin_right = 2286.0
+margin_right = 2563.0
 margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="SurfaceSlope" parent="Level Geometry" instance=ExtResource( 5 )]
-margin_left = 2094.0
-margin_right = 2286.0
+margin_left = 2371.0
+margin_right = 2563.0
 margin_bottom = 72.0
 
 [node name="SurfaceSlope2" parent="Level Geometry" instance=ExtResource( 5 )]
-margin_left = 1189.0
+margin_left = 1466.0
 margin_top = -353.0
-margin_right = 1458.0
+margin_right = 1735.0
 margin_bottom = -216.0
 
 [node name="SurfaceSlope3" parent="Level Geometry" instance=ExtResource( 5 )]
@@ -256,13 +273,13 @@ position = Vector2( -1318, -35 )
 connection = NodePath("../P2 Door")
 
 [node name="lever2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1994, 37 )
+position = Vector2( 2271, 37 )
 connection = NodePath("../P1 Door")
 
 [node name="Label" type="Label" parent="."]
-margin_left = 2393.0
+margin_left = 2670.0
 margin_top = -144.0
-margin_right = 2494.0
+margin_right = 2771.0
 margin_bottom = -85.0
 text = "
 Use < and > to
@@ -285,9 +302,9 @@ margin_bottom = -133.0
 text = "Use W to Jump!"
 
 [node name="Label4" type="Label" parent="."]
-margin_left = 2101.0
+margin_left = 2378.0
 margin_top = -115.0
-margin_right = 2202.0
+margin_right = 2479.0
 margin_bottom = -56.0
 text = "Use \"Up Arrow\"
 to Jump!"
@@ -311,30 +328,53 @@ speed = Vector2( 0, -75 )
 y_final = 250
 y_offset = 5
 
-[node name="P2 Door" parent="." instance=ExtResource( 6 )]
-margin_left = 1619.0
-margin_top = -562.0
-margin_right = 1636.0
-margin_bottom = -353.0
-speed = Vector2( 0, -50 )
-y_final = 100
+[node name="P1 Final Door2" parent="." instance=ExtResource( 6 )]
+margin_left = -845.0
+margin_top = -884.0
+margin_right = -837.0
+margin_bottom = 0.0
+speed = Vector2( 0, -75 )
+y_final = 250
 y_offset = 5
 
 [node name="pressure_plate" parent="." instance=ExtResource( 8 )]
 position = Vector2( -950, -33 )
 connection = NodePath("../P1 Final Door")
 
-[node name="P2 Final Door2" parent="." instance=ExtResource( 6 )]
-margin_left = 1037.0
+[node name="P2 Door" parent="." instance=ExtResource( 6 )]
+margin_left = 1896.0
+margin_top = -562.0
+margin_right = 1913.0
+margin_bottom = -353.0
+speed = Vector2( 0, -50 )
+y_final = 100
+y_offset = 5
+
+[node name="P2 Final Door" parent="." instance=ExtResource( 6 )]
+margin_left = 1314.0
 margin_top = -884.0
-margin_right = 1045.0
+margin_right = 1322.0
 margin_bottom = 0.0
 speed = Vector2( 0, -75 )
 y_final = 250
 y_offset = 5
 
 [node name="pressure_plate2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1113, -33 )
+position = Vector2( 1390, -33 )
+connection = NodePath("../P2 Final Door")
+poundage = 750
+
+[node name="P2 Final Door2" parent="." instance=ExtResource( 6 )]
+margin_left = 728.0
+margin_top = -884.0
+margin_right = 736.0
+margin_bottom = 0.0
+speed = Vector2( 0, -75 )
+y_final = 150
+y_offset = 5
+
+[node name="lever3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 762, -35 )
 connection = NodePath("../P2 Final Door2")
 
 [node name="Label5" type="Label" parent="."]
@@ -347,10 +387,18 @@ Perform a Stomp Attack"
 align = 1
 
 [node name="Label6" type="Label" parent="."]
-margin_left = 1078.0
-margin_top = -389.0
-margin_right = 1233.0
-margin_bottom = -358.0
+margin_left = 1355.0
+margin_top = -430.0
+margin_right = 1510.0
+margin_bottom = -399.0
 text = "Press S While Mid-Air to
 Perform a Stomp Attack"
 align = 1
+
+[node name="Label7" type="Label" parent="."]
+margin_left = 784.0
+margin_top = -124.0
+margin_right = 824.0
+margin_bottom = -110.0
+text = "Try Having Player 1
+Press Space to Throw Their Heart"

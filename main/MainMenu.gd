@@ -12,5 +12,5 @@ func _on_ExitButton_pressed():
 func change_scene(target):
 	var _ignore = get_tree().change_scene(target)
 
-func _ready():
+func _ready(): 
 	$bgm.play()

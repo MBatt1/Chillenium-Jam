@@ -1,9 +1,67 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://main/Main.gd" type="Script" id=1]
 [ext_resource path="res://level/TestFlat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/projectile/heart.png" type="Texture" id=3]
 [ext_resource path="res://main/Transition.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/edge_side.png" type="Texture" id=5]
+[ext_resource path="res://sprites/edge_middle.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 156, 156 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 156, 0, 156, 156 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 312, 0, 156, 156 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 468, 0, 156, 156 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 156, 156 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 156, 0, 156, 156 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 312, 0, 156, 156 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 468, 0, 156, 156 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Root" type="Node2D"]
 script = ExtResource( 1 )
@@ -37,39 +95,284 @@ render_target_update_mode = 3
 position = Vector2( 0, 1 )
 
 [node name="Left" type="ColorRect" parent="Frame"]
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 740.0
+margin_left = -238.0
+margin_top = -21.0
+margin_bottom = 739.0
 rect_pivot_offset = Vector2( -950, 20 )
 
 [node name="Right" type="ColorRect" parent="Frame"]
-margin_left = 1260.0
+margin_left = 1298.0
 margin_top = -20.0
-margin_right = 1300.0
+margin_right = 1473.0
 margin_bottom = 740.0
 rect_pivot_offset = Vector2( 0, 265 )
 
 [node name="Top" type="ColorRect" parent="Frame"]
 margin_left = -20.0
-margin_top = -20.0
+margin_top = -107.0
 margin_right = 1300.0
-margin_bottom = 20.0
 rect_pivot_offset = Vector2( 80, 20 )
 
 [node name="Bottom" type="ColorRect" parent="Frame"]
 margin_left = -20.0
-margin_top = 700.0
+margin_top = 718.0
 margin_right = 1300.0
-margin_bottom = 740.0
+margin_bottom = 855.0
 rect_pivot_offset = Vector2( 80, 20 )
 
-[node name="Center" type="ColorRect" parent="Frame"]
-margin_left = 630.0
-margin_top = -20.0
-margin_right = 650.0
-margin_bottom = 740.0
-rect_pivot_offset = Vector2( -950, 20 )
+[node name="Center" type="Node2D" parent="Frame"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Frame/Center"]
+position = Vector2( 634, -26 )
+frames = SubResource( 10 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/Center"]
+position = Vector2( 634, 130 )
+frames = SubResource( 10 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/Center"]
+position = Vector2( 615, 392 )
+frames = SubResource( 10 )
+frame = 2
+playing = true
+offset = Vector2( 19, -106 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/Center"]
+position = Vector2( 615, 392 )
+frames = SubResource( 10 )
+frame = 2
+playing = true
+offset = Vector2( 19, 50 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/Center"]
+position = Vector2( 634, 598 )
+frames = SubResource( 10 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Frame/Center"]
+position = Vector2( 634, 754 )
+frames = SubResource( 10 )
+frame = 2
+playing = true
+
+[node name="EdgeR" type="Node2D" parent="Frame"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Frame/EdgeR"]
+position = Vector2( 1269, 66 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/EdgeR"]
+position = Vector2( 1269, 222 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/EdgeR"]
+position = Vector2( 1268.5, 378 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/EdgeR"]
+position = Vector2( 1268.5, 534 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/EdgeR"]
+position = Vector2( 1268.5, 690 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="EdgeL" type="Node2D" parent="Frame"]
+position = Vector2( -932, 76 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Frame/EdgeL"]
+position = Vector2( 947, -28 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/EdgeL"]
+position = Vector2( 947, 128 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/EdgeL"]
+position = Vector2( 946.5, 284 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/EdgeL"]
+position = Vector2( 946.5, 440 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/EdgeL"]
+position = Vector2( 946.5, 596 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="EdgeTop" type="Node2D" parent="Frame"]
+position = Vector2( -932, 76 )
+rotation = -1.5708
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.7866, 967.333 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.7866, 1123.33 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.2864, 1279.33 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.2864, 1435.33 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.2866, 1591.33 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.9395, 1747.38 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.4399, 1903.38 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.4395, 2059.38 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Frame/EdgeTop"]
+position = Vector2( 66.4395, 2215.38 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="EdgeTop2" type="Node2D" parent="Frame"]
+position = Vector2( -932, 76 )
+rotation = 1.5708
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 633.935, -2199.11 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 633.935, -2043.11 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 633.434, -1887.11 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 633.434, -1731.11 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 633.434, -1575.11 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 634.087, -1419.07 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 633.587, -1263.07 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 633.587, -1107.07 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="Frame/EdgeTop2"]
+position = Vector2( 633.587, -951.066 )
+scale = Vector2( 0.403846, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

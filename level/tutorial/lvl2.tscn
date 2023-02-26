@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://level/Editor/hazards/spike.tscn" type="PackedScene" id=8]
 [ext_resource path="res://level/Editor/hazards/falling/FallingObject.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/level/kill_plane.tscn" type="PackedScene" id=11]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -357,11 +358,8 @@ position = Vector2( 446, -55 )
 connection = NodePath("../P2 Door")
 
 [node name="lever2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 964, 39 )
+position = Vector2( 964, 43 )
 connection = NodePath("../Level Geometry/L Wedge")
-
-[node name="lever5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 964, 44 )
 
 [node name="lever3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 4152, -47 )
@@ -384,9 +382,9 @@ polygon = PoolVector2Array( 1101, -288, 1101, -284, 1373, -422, 1369, -422 )
 
 [node name="FallingObject" parent="." instance=ExtResource( 9 )]
 margin_left = 3422.0
-margin_top = -222.0
+margin_top = -224.0
 margin_right = 3425.0
-margin_bottom = -159.0
+margin_bottom = -161.0
 border_color = Color( 1, 0, 0, 0 )
 editor_only = false
 speed = Vector2( 0, 400 )
@@ -395,9 +393,9 @@ y_offset = 20
 
 [node name="FallingObject2" parent="." instance=ExtResource( 9 )]
 margin_left = 3042.0
-margin_top = -222.0
+margin_top = -224.0
 margin_right = 3045.0
-margin_bottom = -159.0
+margin_bottom = -161.0
 border_color = Color( 1, 0, 0, 0 )
 editor_only = false
 speed = Vector2( 0, 400 )
@@ -406,9 +404,9 @@ y_offset = 20
 
 [node name="FallingObject3" parent="." instance=ExtResource( 9 )]
 margin_left = 3234.0
-margin_top = -222.0
+margin_top = -224.0
 margin_right = 3237.0
-margin_bottom = -159.0
+margin_bottom = -161.0
 border_color = Color( 1, 0, 0, 0 )
 editor_only = false
 speed = Vector2( 0, 400 )
@@ -422,3 +420,9 @@ friction = 750
 drag = 250
 speed = 75
 move_direction = 1
+
+[node name="Kill Box L" parent="." instance=ExtResource( 11 )]
+position = Vector2( 871, 261 )
+
+[node name="Kill Box R" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4204, 254 )

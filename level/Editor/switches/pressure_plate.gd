@@ -5,6 +5,7 @@ extends StaticBody2D
 # var a = 2
 # var b = "text"
 export(NodePath) var connection
+export(int) var poundage = 400
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +17,7 @@ func _ready():
 #	pass
 
 func _on_Area2D_body_entered(body):
-	if (body.name == 'player' or body.name == '@player@2') and body.speed_y >= 300:
+	if (body.name == 'player' or body.name == '@player@2') and body.speed_y >= poundage:
 		get_node(connection).activate = true
 
 func _on_Area2D_body_exited(body):

@@ -13,7 +13,11 @@ var heart_side
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	level = level_template.instance()
+	if Global.desired_stage:
+		level = Global.desired_stage.instance()
+	else:
+		level = level_template.instance()
+	$Transition.transition_from()
 	$LVC/Viewport.add_child(level)
 	$RVC/Viewport.world_2d = $LVC/Viewport.world_2d
 	var spawns = level.get_player_spawns()
@@ -21,6 +25,8 @@ func _ready():
 	player2 = spawns[1].spawn(level, $RVC/Viewport/Cam)
 	player1.connect("throw", self, "_on_p1_throw")
 	player2.connect("throw", self, "_on_p2_throw")
+	player1.connect("death",self, "_on_p_death")
+	player2.connect("death",self, "_on_p_death")
 	heart = heart_res.instance()
 	level.add_child(heart)
 	heart_target = level.heart_start
@@ -115,7 +121,9 @@ func _fake_heart_position():
 		var r_cam_top_left = $RVC/Viewport/Cam.position-Vector2(320, 360)
 		return heart.position - r_cam_top_left + Vector2(640, 0)
 
-
+func _on_p_death():
+	$Transition.transition_to()
+	yield($Transition, "done")
 
 
 

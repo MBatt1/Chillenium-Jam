@@ -386,7 +386,6 @@ y_offset = 5
 [node name="pressure_plate2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1622, -31 )
 connection = NodePath("../P2 Final Door")
-poundage = 750
 
 [node name="P2 Final Door2" parent="." instance=ExtResource( 6 )]
 margin_left = 951.0

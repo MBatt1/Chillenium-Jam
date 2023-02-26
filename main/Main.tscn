@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://main/Main.gd" type="Script" id=1]
 [ext_resource path="res://level/TestFlat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/projectile/heart.png" type="Texture" id=3]
+[ext_resource path="res://main/Transition.tscn" type="PackedScene" id=4]
 
 [node name="Root" type="Node2D"]
 script = ExtResource( 1 )
@@ -78,5 +79,7 @@ autostart = true
 rotation = -1.5708
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
+
+[node name="Transition" parent="." instance=ExtResource( 4 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

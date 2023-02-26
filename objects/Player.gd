@@ -10,6 +10,8 @@ export(int) var drag
 export(int) var speed = 200
 export(int) var jump_strength = 200
 
+signal death
+
 signal throw
 
 var alive = true
@@ -58,6 +60,8 @@ func add_drag(sp, decrementer):
 		return sp+decrementer
 
 func _physics_process(delta):
+	if not alive:
+		$AnimatedSprite.play("death")
 	if is_on_floor() and abs(speed_x) <10:
 		$AnimatedSprite.play("default")
 		pound_state = false
@@ -73,7 +77,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed(up_control) and alive == true:
 			$AnimatedSprite.play("jump")
 			speed_y = -jump_strength
-		else:
+		elif alive:
 			speed_y = 0
 	if alive == true:
 		if Input.is_action_pressed(use_control) and possess_heart:
@@ -93,16 +97,20 @@ func _physics_process(delta):
 			speed_x = add_drag(speed_x,drag*delta)
 		else:
 			speed_x = add_drag(speed_x,friction*delta)
-		var velocity = Vector2(speed_x, speed_y)
-		var _result = move_and_slide(velocity, Vector2.UP)
+	var velocity = Vector2(speed_x, speed_y)
+	var _result = move_and_slide(velocity, Vector2.UP)
 
 func kill_player():
-	alive = false
-	$AnimatedSprite.play("death")
-	$CollisionShape2D.disabled = true
-	#speed = Vector2(0, -200)
-	yield(get_tree().create_timer(5), "timeout")
-	get_tree().change_scene("res://main/Main.tscn")
+	if alive:
+		alive = false
+		speed_y = -150
+		$CollisionShape2D.disabled = true
+		collision_layer = 0
+		collision_mask = 0
+		yield(get_tree().create_timer(2), "timeout")
+		emit_signal("death")
+		yield(get_tree().create_timer(1), "timeout")
+		get_tree().change_scene("res://main/Main.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta):

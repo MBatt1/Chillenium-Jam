@@ -15,6 +15,10 @@ extents = Vector2( 1611.5, 83.5 )
 script = ExtResource( 3 )
 
 [node name="Surface" parent="." instance=ExtResource( 7 )]
+margin_left = 315.0
+margin_top = -18.0
+margin_right = 355.0
+margin_bottom = 22.0
 speed = Vector2( -30, 30 )
 x_final = 100
 y_final = 100
@@ -22,7 +26,7 @@ x_offset = 10
 y_offset = 10
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( -13, -95 )
+position = Vector2( 302, -113 )
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 margin_left = -932.0
@@ -36,7 +40,7 @@ position = Vector2( 684.5, 606 )
 shape = SubResource( 1 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
-position = Vector2( -52, 233 )
+position = Vector2( 263, 215 )
 template = ExtResource( 2 )
 weight = 200
 friction = 200
@@ -44,7 +48,7 @@ drag = 400
 color = Color( 1, 0, 0, 1 )
 
 [node name="PlayerSpawner2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1085, 296 )
+position = Vector2( 1400, 278 )
 template = ExtResource( 2 )
 player_id = 1
 weight = 200
@@ -53,15 +57,15 @@ drag = 400
 color = Color( 0, 0.529412, 1, 1 )
 
 [node name="enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 685, 389 )
+position = Vector2( 1000, 371 )
 weight = 50
 friction = 50
 drag = 50
 
 [node name="spikebody" parent="." instance=ExtResource( 5 )]
-position = Vector2( 410, 418 )
+position = Vector2( 725, 400 )
 v_flip = true
 
 [node name="lever" parent="." instance=ExtResource( 6 )]
-position = Vector2( 138, 392 )
+position = Vector2( 453, 374 )
 connection = NodePath("../Surface")

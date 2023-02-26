@@ -20,5 +20,5 @@ func _process(delta):
 	$Sprite.flip_v = v_flip
 	
 func _on_killbox_body_entered(body):
-	if body.name == 'player' or body.name == '@player@2':
+	if "player" in body.name:
 		body.kill_player()

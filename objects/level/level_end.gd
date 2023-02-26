@@ -16,9 +16,9 @@ func _ready():
 #	pass
 
 func _on_Area2D_body_entered(body):
-	if (body.name == 'player' or body.name == '@player@2'):
+	if "player" in body.name:
 		body.end_ready_check()
 
 func _on_Area2D_body_exited(body):
-	if (body.name == 'player' or body.name == '@player@2'):
+	if "player" in body.name:
 		body.end_ready_check()

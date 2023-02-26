@@ -22,7 +22,7 @@ func switch_state():
 #	pass
 
 func _on_Area2D_body_entered(body):
-	if (body.name == 'player' or body.name == '@player@2'):
+	if "player" in body.name:
 		switch_state()
 		if get_node(connection) != null:
 			get_node(connection).activate = true

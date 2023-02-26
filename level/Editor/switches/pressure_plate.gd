@@ -17,12 +17,12 @@ func _ready():
 #	pass
 
 func _on_Area2D_body_entered(body):
-	if (body.name == 'player' or body.name == '@player@2') and body.pound_state == true:
+	if "player" in body.name and body.pound_state == true:
 		get_node(connection).activate = true
 		$AnimatedSprite.play("on")
 
 func _on_Area2D_body_exited(body):
-	if (body.name == 'player' or body.name == '@player@2'):
+	if "player" in body.name:
 		if get_node(connection) != null:
 			get_node(connection).activate = false
 		$AnimatedSprite.play("off")

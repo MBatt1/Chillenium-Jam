@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lever.png-b501235b1ae67610dd5f9a009af83baa.stex"
+path="res://.import/lever.png-14f613dfccf05531e6014c5a59c8adc3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/Editor/switches/lever.png"
-dest_files=[ "res://.import/lever.png-b501235b1ae67610dd5f9a009af83baa.stex" ]
+source_file="res://level/editor/switches/lever.png"
+dest_files=[ "res://.import/lever.png-14f613dfccf05531e6014c5a59c8adc3.stex" ]
 
 [params]
 

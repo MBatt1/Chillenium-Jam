@@ -26,7 +26,7 @@ var down_control
 var left_control
 var use_control
 
-var has_heart = false
+var possess_heart = false
 
 func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc, tc):
 	weight = w
@@ -46,13 +46,13 @@ func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc, tc):
 func _ready():
 	pass # Replace with function body.
 
-func add_drag(speed, decrementer):
-	if abs(speed) < 10:
+func add_drag(sp, decrementer):
+	if abs(sp) < 10:
 		return 0
-	elif speed > 0:
-		return speed-decrementer
+	elif sp > 0:
+		return sp-decrementer
 	else:
-		return speed+decrementer
+		return sp+decrementer
 
 func _physics_process(delta):
 	if is_on_floor() and abs(speed_x) <10:
@@ -71,7 +71,7 @@ func _physics_process(delta):
 		else:
 			speed_y = 0
 	if alive == true:
-		if Input.is_action_pressed(use_control) and has_heart:
+		if Input.is_action_pressed(use_control) and possess_heart:
 			emit_signal("throw")
 			has_heart(false)
 		if Input.is_action_pressed(right_control):
@@ -89,12 +89,11 @@ func _physics_process(delta):
 		else:
 			speed_x = add_drag(speed_x,friction*delta)
 		var velocity = Vector2(speed_x, speed_y)
-		move_and_slide(velocity, Vector2.UP)
+		var _result = move_and_slide(velocity, Vector2.UP)
 
 func kill_player():
 	$AnimatedSprite.play("death")
 	$AnimatedSprite.rotate(1440)
-	$CollisionShape2D.disabled = true
 	alive = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -112,7 +111,7 @@ func _process(delta):
 				tracking_camera.position.y -= camera_y_track_speed*delta
 
 func has_heart(state):
-	has_heart = state
+	possess_heart = state
 	if state:
 		$HeartSprite.visible = true
 	else:

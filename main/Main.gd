@@ -35,6 +35,7 @@ func _ready():
 	heart.connect("player_impact", self, "_on_player_impact")
 	$LVC/Viewport/Cam.make_current()
 	$RVC/Viewport/Cam.make_current()
+	$sm.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

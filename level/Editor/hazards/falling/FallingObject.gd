@@ -11,6 +11,7 @@ var t_pos
 var l_pos
 var b_pos
 var activate = false
+var stop_all = false
 #var old_position = Vector2($StaticBody2D/CollisionShape2D.position)
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,18 +21,23 @@ func _ready():
 	t_pos = margin_top
 
 func _physics_process(delta):
-	if activate == true:
-		if abs(y_offset) < y_final:
-			y_offset += speed.y*delta
-	margin_top = t_pos +y_offset
-	margin_bottom = b_pos +y_offset
+	if stop_all == false:
+		if activate == true:
+			if abs(y_offset) < y_final:
+				y_offset += speed.y*delta
+		margin_top = t_pos +y_offset
+		margin_bottom = b_pos +y_offset
+	else:
+		speed = 0
+		pass
 	
 func _on_Area2D_body_entered(body):
 	if body.name == 'player' or body.name == '@player@2':
 		activate = true
 		$trigger/triggerhitbox.disabled = true
 		
-
 func _on_kill_body_entered(body):
-	if body.name == 'player' or body.name == '@player@2':
+	if (body.name == 'player' or body.name == '@player@2') and stop_all == false:
 		body.kill_player()
+	else:
+		stop_all = true

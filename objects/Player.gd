@@ -55,10 +55,6 @@ func add_drag(speed, decrementer):
 		return speed+decrementer
 
 func _physics_process(delta):
-	if Input.is_action_pressed(use_control) and has_heart:
-		emit_signal("throw")
-		has_heart(false)
-		
 	if is_on_floor() and abs(speed_x) <10:
 		$AnimatedSprite.play("default")
 		$AnimatedSprite.flip_h = false
@@ -71,6 +67,9 @@ func _physics_process(delta):
 		else:
 			speed_y = 0
 	if alive == true:
+		if Input.is_action_pressed(use_control) and has_heart:
+			emit_signal("throw")
+			has_heart(false)
 		if Input.is_action_pressed(right_control):
 			$AnimatedSprite.flip_h = true
 			if is_on_floor():

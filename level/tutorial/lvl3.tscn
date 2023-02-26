@@ -81,9 +81,8 @@ rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Spike Retract" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = 4887.0
-margin_top = 1.0
 margin_right = 4993.0
-margin_bottom = 29.0
+margin_bottom = 28.0
 speed = Vector2( 100, 0 )
 x_final = 105
 

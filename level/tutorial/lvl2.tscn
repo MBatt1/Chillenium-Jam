@@ -23,11 +23,8 @@ margin_top = -1263.0
 margin_right = 5696.0
 margin_bottom = 3751.0
 
-[node name="Node2D2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 2481, -98 )
-
 [node name="Node2D" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1936, -98 )
+position = Vector2( 2372, -101 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
 position = Vector2( 62, -115 )

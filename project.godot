@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Chillenium- Jam"
-run/main_scene="res://main/Main.tscn"
+run/main_scene="res://main/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://main/global.gd"
 
 [display]
 

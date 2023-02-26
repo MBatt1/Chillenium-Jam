@@ -13,7 +13,11 @@ var heart_side
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	level = level_template.instance()
+	if Global.desired_stage:
+		level = Global.desired_stage.instance()
+	else:
+		level = level_template.instance()
+	$Transition.transition_from()
 	$LVC/Viewport.add_child(level)
 	$RVC/Viewport.world_2d = $LVC/Viewport.world_2d
 	var spawns = level.get_player_spawns()

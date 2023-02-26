@@ -32,6 +32,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$HeartSprite.position = _fake_heart_position()
+	$HeartSprite.rotation = heart.rotation-PI/2
 	if player1.tracked or player2.tracked:
 			$Frame/Center.visible = false
 	elif $Timer.is_stopped() and -($LVC/Viewport/Cam.position.x-$RVC/Viewport/Cam.position.x) <= 640:
@@ -43,13 +45,18 @@ func _process(delta):
 		player2.camera_y_track = avg_y
 		
 	if heart_target == 0:
-		if heart_side == 0:
+		if player1.tracked or player2.tracked:
 			heart.homing_target = player1.position
-		else:
+		elif heart_side == 0:
 			heart.homing_target = $LVC/Viewport/Cam.position
+		else:
+			heart.homing_target = $RVC/Viewport/Cam.position - Vector2(640, $RVC/Viewport/Cam.position.y-$LVC/Viewport/Cam.position.y)
+			
 	elif heart_target == 1:
-		if heart_side == 1:
+		if player1.tracked or player2.tracked:
 			heart.homing_target = player2.position
+		elif heart_side == 0:
+			heart.homing_target = $LVC/Viewport/Cam.position + Vector2(640, $LVC/Viewport/Cam.position.y-$RVC/Viewport/Cam.position.y)
 		else:
 			heart.homing_target = $RVC/Viewport/Cam.position
 	
@@ -68,12 +75,12 @@ func _on_player_impact(player):
 	if $Timer.is_stopped():
 		player.has_heart(true)
 		heart.get_node("CollisionShape2D").disabled = true
-		heart.visible = false
+		$HeartSprite.visible = false
 
 
 func _on_p1_throw():
 	$Timer.start()
-	heart.visible = true
+	$HeartSprite.visible = true
 	heart_target = 1
 	heart.rotation = Vector2(player1.speed_x, player1.speed_y).angle()
 	_process(0)
@@ -81,7 +88,7 @@ func _on_p1_throw():
 	
 func _on_p2_throw():
 	$Timer.start()
-	heart.visible = true
+	$HeartSprite.visible = true
 	heart_target = 0
 	heart.rotation = Vector2(player2.speed_x, player2.speed_y).angle()
 	_process(0)
@@ -105,8 +112,13 @@ func sided_heart():
 		heart_side = 1
 
 
-
-
+func _fake_heart_position():
+	if heart_side == 0:
+		var l_cam_top_left = $LVC/Viewport/Cam.position-Vector2(320, 360)
+		return heart.position - l_cam_top_left
+	else:
+		var r_cam_top_left = $RVC/Viewport/Cam.position-Vector2(320, 360)
+		return heart.position - r_cam_top_left + Vector2(640, 0)
 
 
 

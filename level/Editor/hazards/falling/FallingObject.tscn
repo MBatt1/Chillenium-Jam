@@ -4,7 +4,7 @@
 [ext_resource path="res://level/Editor/hazards/falling/anvil.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.4, 5.3 )
+extents = Vector2( 8.3, 5.7 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 258 )
@@ -21,7 +21,7 @@ script = ExtResource( 1 )
 [node name="kill" type="Area2D" parent="StaticBody2D"]
 
 [node name="killbox" type="CollisionShape2D" parent="StaticBody2D/kill"]
-position = Vector2( -3, 33.5 )
+position = Vector2( 1.5, 35.5 )
 scale = Vector2( 5, 5 )
 shape = SubResource( 2 )
 

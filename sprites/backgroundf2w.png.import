@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/on.png-fea154180ebae15288716bdac2b108b3.stex"
+path="res://.import/backgroundf2w.png-1f51013e617745959c90d08eec2b4bba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/editor/switches/on.png"
-dest_files=[ "res://.import/on.png-fea154180ebae15288716bdac2b108b3.stex" ]
+source_file="res://sprites/backgroundf2w.png"
+dest_files=[ "res://.import/backgroundf2w.png-1f51013e617745959c90d08eec2b4bba.stex" ]
 
 [params]
 

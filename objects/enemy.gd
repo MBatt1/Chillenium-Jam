@@ -63,6 +63,7 @@ func die():
 	$hitbox.disabled = true
 	$Area2D/killbox.disabled = true
 	machine = state.SOBBING
+	$AudioStreamPlayer.play()
 	dead = true
 	velocity = Vector2(0, -200)
 

@@ -18,4 +18,3 @@ func _ready():
 	$bgm.play(Global.song_position)
 	if Global.song_position != 0:
 		$Transition.transition_from()
-

@@ -1,10 +1,6 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+export(int) var mode
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,4 +16,7 @@ func _ready():
 	$Sprite.queue_free()
 
 func _random_color():
-	return Color(1,randf()*0.5,randf())
+	if mode == 0:
+		return Color(1,randf()*0.5,randf())
+	elif mode == 1:
+		return Color(randf()*0.5,1,randf())

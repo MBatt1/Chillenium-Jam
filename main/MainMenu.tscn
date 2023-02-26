@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://gui_theme.tres" type="Theme" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://main/MenuBackground.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/TGITTLE.png" type="Texture" id=5]
 [ext_resource path="res://music/main_menu.mp3" type="AudioStream" id=6]
+[ext_resource path="res://sprites/TGITTLE2.png" type="Texture" id=7]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -46,9 +47,14 @@ volume_db = -15.0
 max_distance = 50000.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 637, 189.75 )
+position = Vector2( 429, 239 )
 scale = Vector2( 1.03322, 1.03322 )
 texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 805, 156 )
+scale = Vector2( 1.06754, 1.06754 )
+texture = ExtResource( 7 )
 
 [node name="Transition" parent="." instance=ExtResource( 3 )]
 

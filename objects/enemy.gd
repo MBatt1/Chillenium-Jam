@@ -18,6 +18,7 @@ export(int) var drag
 export(int) var speed
 export(dir) var move_direction
 export(state) var machine
+var dead = false
 
 var velocity = Vector2.ZERO
 
@@ -47,7 +48,7 @@ func _physics_process(delta):
 	var speed_y = velocity.y
 	if not is_on_floor():
 		speed_y += weight*delta
-	else:
+	elif not dead:
 		speed_y = 0
 	if not is_on_floor():
 		speed_x = add_drag(speed_x,drag*delta)
@@ -57,6 +58,13 @@ func _physics_process(delta):
 	var _result = move_and_slide(velocity, Vector2.UP)
 	if is_on_wall():
 		move_direction = int(!move_direction)
+
+func die():
+	$hitbox.disabled = true
+	$Area2D/killbox.disabled = true
+	machine = state.SOBBING
+	dead = true
+	velocity = Vector2(0, -200)
 
 func _on_Area2D_body_entered(body):
 	if "player" in body.name:

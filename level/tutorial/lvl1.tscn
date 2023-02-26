@@ -14,7 +14,7 @@
 script = ExtResource( 1 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1356, -129 )
+position = Vector2( -3009, -304 )
 template = ExtResource( 4 )
 weight = 1000
 friction = 800

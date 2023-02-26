@@ -59,7 +59,7 @@ friction = 50
 drag = 50
 
 [node name="spikebody" parent="." instance=ExtResource( 5 )]
-position = Vector2( 411, 327 )
+position = Vector2( 410, 418 )
 v_flip = true
 
 [node name="lever" parent="." instance=ExtResource( 6 )]

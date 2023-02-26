@@ -76,7 +76,7 @@ func _physics_process(delta):
 	else:
 		if Input.is_action_pressed(up_control) and alive == true:
 			$AnimatedSprite.play("jump")
-			#$AudioStreamPlayer.play()
+			$AudioStreamPlayer.play()
 			speed_y = -jump_strength
 		elif alive:
 			speed_y = 0

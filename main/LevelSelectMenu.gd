@@ -38,11 +38,6 @@ func _on_Button3_pressed():
 	Global.desired_stage = Global.stage3
 	var _ignore = get_tree().change_scene("res://main/Main.tscn")
 
-
-func _on_Button4_pressed():
-	pass # Replace with function body.
-
-
 func _on_Button5_pressed():
 	$Transition.transition_to()
 	yield($Transition, "done")
@@ -54,4 +49,4 @@ func _on_Button6_pressed():
 	$Transition.transition_to()
 	yield($Transition, "done")
 	Global.song_position = $bgm.get_playback_position()
-	get_tree().change_scene("res://main/MainMenu.tscn")
+	var _ignore = get_tree().change_scene("res://main/MainMenu.tscn")

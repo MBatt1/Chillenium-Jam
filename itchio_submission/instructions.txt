@@ -1,0 +1,43 @@
+
+
+TELLTALE HEARTS
+
+by Team Magnolia:
+  Blake Jones
+  Chris Bunge
+  Maxx Batterton
+  Zephan Tate
+  
+  
+Goal of the Game:
+Telltale hearts places two user-controlled characters on opposite sides
+of a world map, and uses a split-screen to display both characters at once.
+
+The players must traverse platforming puzzles and enemies to meet up in the
+middle to finish each stage. Between the two characters, is a heart projectile
+that can be fired back and forth between the two characters to solve puzzles
+and eliminate enemies.
+
+
+Controls:
+
+Player 1 (Left Screen):
+WAD movement
+S to hard drop
+Spacebar to fire the heart
+
+Player 2 (Right Screen):
+Arrow Key movement
+Down Arrow to hard drop
+Right Shift to fire the heart
+
+Escape to quit levels
+
+
+Software Used
+Godot Engine
+GitHub
+FL Studio
+Synth1 Virtual Analog Synth
+Aseprite
+Notepad++

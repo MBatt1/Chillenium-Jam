@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://level/LevelScript.gd" type="Script" id=1]
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level/Editor/hazards/spike.tscn" type="PackedScene" id=8]
 [ext_resource path="res://level/Editor/hazards/falling/FallingObject.tscn" type="PackedScene" id=9]
-[ext_resource path="res://objects/enemy.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -402,13 +401,10 @@ polygon = PoolVector2Array( 1101, -288, 1369, -422, 1373, -422, 1171.01, -319.51
 polygon = PoolVector2Array( 1101, -288, 1101, -284, 1373, -422, 1369, -422 )
 
 [node name="FallingObject" parent="." instance=ExtResource( 9 )]
-margin_left = 453.0
-margin_top = -218.0
-margin_right = 468.0
-margin_bottom = -155.0
+margin_left = 2229.0
+margin_top = -360.0
+margin_right = 2244.0
+margin_bottom = -297.0
 speed = Vector2( 0, 500 )
 y_final = 1000
 y_offset = 10
-
-[node name="enemy" parent="FallingObject" instance=ExtResource( 10 )]
-position = Vector2( 361, 175 )

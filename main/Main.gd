@@ -82,7 +82,7 @@ func _physics_process(_delta):
 
 
 func _on_player_impact(player):
-	if $Timer.is_stopped():
+	if $Timer2.is_stopped():
 		player.has_heart(true)
 		heart.get_node("CollisionShape2D").disabled = true
 		$HeartSprite.visible = false
@@ -90,16 +90,20 @@ func _on_player_impact(player):
 
 func _on_p1_throw():
 	$Timer.start()
+	$Timer2.start()
 	$HeartSprite.visible = true
 	heart_target = 1
+	heart.position = player1.position
 	heart.rotation = Vector2(100, player1.speed_y).angle()
 	_process(0)
 
 	
 func _on_p2_throw():
 	$Timer.start()
+	$Timer2.start()
 	$HeartSprite.visible = true
 	heart_target = 0
+	heart.position = player2.position
 	heart.rotation = Vector2(-100, player2.speed_y).angle()
 	_process(0)
 

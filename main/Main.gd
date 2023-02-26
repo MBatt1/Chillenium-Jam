@@ -14,7 +14,7 @@ var heart_side
 func _ready():
 	level = level_template.instance()
 	$LVC/Viewport.add_child(level)
-	resize_viewports()
+	$RVC/Viewport.world_2d = $LVC/Viewport.world_2d
 	var spawns = level.get_player_spawns()
 	player1 = spawns[0].spawn(level, $LVC/Viewport/Cam)
 	player2 = spawns[1].spawn(level, $RVC/Viewport/Cam)
@@ -31,7 +31,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$HeartSprite.position = _fake_heart_position()
 	$HeartSprite.rotation = heart.rotation-PI/2
 	if player1.tracked or player2.tracked:
@@ -61,14 +61,13 @@ func _process(delta):
 			heart.homing_target = $RVC/Viewport/Cam.position
 	
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	sided_heart()
 	
 
 func resize_viewports():
 	var width = get_viewport().size.x/2
 	var height = get_viewport().size.y
-	$RVC/Viewport.world_2d = $LVC/Viewport.world_2d
 
 
 func _on_player_impact(player):
@@ -91,7 +90,6 @@ func _on_p2_throw():
 	$HeartSprite.visible = true
 	heart_target = 0
 	heart.rotation = Vector2(-100, player2.speed_y).angle()
-	print(heart.rotation)
 	_process(0)
 
 

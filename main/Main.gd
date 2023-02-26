@@ -63,11 +63,6 @@ func _process(_delta):
 	
 func _physics_process(_delta):
 	sided_heart()
-	
-
-func resize_viewports():
-	var width = get_viewport().size.x/2
-	var height = get_viewport().size.y
 
 
 func _on_player_impact(player):

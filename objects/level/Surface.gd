@@ -1,9 +1,7 @@
 extends ReferenceRect
 
 export(Vector2) var speed
-export(int) var x_final
 export(int) var y_final
-export(int) var x_offset
 export(int) var y_offset
 # Declare member variables here. Examples:
 # var a = 2
@@ -31,12 +29,14 @@ func _ready():
 
 func _physics_process(delta):
 	if activate == true:
-		if abs(x_offset) < x_final:
-			x_offset += speed.x*delta
 		if abs(y_offset) < y_final:
 			y_offset += speed.y*delta
-	margin_right = r_pos + x_offset
-	margin_left = l_pos + x_offset
 	margin_top = t_pos +y_offset
 	margin_bottom = b_pos +y_offset
 	
+func _on_Area2D_body_entered(body):
+	if body.name == 'player' or body.name == '@player@2':
+		activate = true
+		
+func _process(delta):
+	$trigger/triggerhitbox.disabled = true

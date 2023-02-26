@@ -37,7 +37,7 @@ func _on_Area2D_body_entered(body):
 		$trigger/triggerhitbox.disabled = true
 		
 func _on_kill_body_entered(body):
-	if body.name == 'player' or body.name == '@player@2' and stop_all == false:
+	if (body.name == 'player' or body.name == '@player@2') and stop_all == false:
 		body.kill_player()
 	else:
 		stop_all = true

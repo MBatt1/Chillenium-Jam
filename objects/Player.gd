@@ -134,7 +134,10 @@ func has_heart(state):
 		$HeartSprite.visible = false
 
 func end_ready_check():
-	check = true
+	if check == true:
+		check = false
+	else:
+		check = true
 
 
 

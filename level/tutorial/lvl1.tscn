@@ -385,28 +385,28 @@ position = Vector2( 5554, 37 )
 connection = NodePath("../P1 Door")
 
 [node name="Label" type="Label" parent="."]
-margin_left = 5953.0
-margin_top = -144.0
-margin_right = 6054.0
-margin_bottom = -85.0
+margin_left = 5886.0
+margin_top = -148.0
+margin_right = 5987.0
+margin_bottom = -89.0
 text = "
 Use < and > to
 Move Around."
 
 [node name="Label2" type="Label" parent="."]
-margin_left = -91.0
-margin_top = -357.0
-margin_right = 10.0
-margin_bottom = -298.0
+margin_left = -8.0
+margin_top = -388.0
+margin_right = 93.0
+margin_bottom = -329.0
 text = "
 Use A and D to
 Move Around."
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 166.0
-margin_top = -192.0
-margin_right = 267.0
-margin_bottom = -133.0
+margin_left = 160.0
+margin_top = -193.0
+margin_right = 261.0
+margin_bottom = -134.0
 text = "Use W to Jump!"
 
 [node name="Label4" type="Label" parent="."]
@@ -427,21 +427,22 @@ position = Vector2( 4662, -31 )
 connection = NodePath("../P2 Final Door")
 
 [node name="Label5" type="Label" parent="."]
-margin_left = 1390.0
-margin_top = -390.0
-margin_right = 1545.0
-margin_bottom = -359.0
+margin_left = 1396.0
+margin_top = -389.0
+margin_right = 1551.0
+margin_bottom = -358.0
 text = "Press S While Mid-Air to
 Perform a Stomp Attack"
 align = 1
 
 [node name="Label6" type="Label" parent="."]
-margin_left = 4638.0
-margin_top = -430.0
-margin_right = 4793.0
-margin_bottom = -399.0
-text = "Press S While Mid-Air to
-Perform a Stomp Attack"
+margin_left = 4586.0
+margin_top = -411.0
+margin_right = 4743.0
+margin_bottom = -363.0
+text = "Press Down Arrow While
+Mid-Air to Perform
+a Stomp Attack"
 align = 1
 
 [node name="Label7" type="Label" parent="."]

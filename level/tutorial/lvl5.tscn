@@ -312,12 +312,12 @@ margin_bottom = 264.0
 margin_left = 2549.0
 margin_top = 71.0
 margin_right = 2568.0
-margin_bottom = 237.0
+margin_bottom = 238.0
 
 [node name="Surface19" parent="Blocks" instance=ExtResource( 1 )]
-margin_left = 2561.0
+margin_left = 2568.0
 margin_top = 221.0
-margin_right = 2675.0
+margin_right = 2655.0
 margin_bottom = 238.0
 
 [node name="Surface20" parent="Blocks" instance=ExtResource( 1 )]
@@ -374,18 +374,6 @@ margin_top = -32.0
 margin_right = 6055.0
 margin_bottom = 19.0
 
-[node name="Surface29" parent="Blocks" instance=ExtResource( 1 )]
-margin_left = 1829.0
-margin_top = 157.0
-margin_right = 1912.0
-margin_bottom = 188.0
-
-[node name="Surface30" parent="Blocks" instance=ExtResource( 1 )]
-margin_left = 1592.0
-margin_top = 45.0
-margin_right = 1708.0
-margin_bottom = 75.0
-
 [node name="Surface31" parent="Blocks" instance=ExtResource( 1 )]
 margin_left = 5475.0
 margin_top = -588.0
@@ -398,29 +386,41 @@ margin_top = 532.0
 margin_right = 1906.0
 margin_bottom = 559.0
 
-[node name="Surface33" parent="Blocks" instance=ExtResource( 1 )]
-margin_left = 1584.0
-margin_top = 288.0
-margin_right = 1716.0
-margin_bottom = 315.0
-
 [node name="Surface34" parent="Blocks" instance=ExtResource( 1 )]
 margin_left = 1711.0
 margin_top = 427.0
 margin_right = 1793.0
 margin_bottom = 451.0
 
-[node name="Surface35" parent="Blocks" instance=ExtResource( 1 )]
-margin_left = 1794.0
-margin_top = -117.0
-margin_right = 1913.0
-margin_bottom = -93.0
-
 [node name="Surface36" parent="Blocks" instance=ExtResource( 1 )]
 margin_left = 1796.0
 margin_top = -285.0
-margin_right = 1925.0
-margin_bottom = -257.0
+margin_right = 1886.0
+margin_bottom = -264.0
+
+[node name="Surface42" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1796.0
+margin_top = -117.0
+margin_right = 1886.0
+margin_bottom = -96.0
+
+[node name="Surface43" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1796.0
+margin_top = 157.0
+margin_right = 1886.0
+margin_bottom = 178.0
+
+[node name="Surface44" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1613.0
+margin_top = 288.0
+margin_right = 1703.0
+margin_bottom = 309.0
+
+[node name="Surface45" parent="Blocks" instance=ExtResource( 1 )]
+margin_left = 1613.0
+margin_top = 45.0
+margin_right = 1703.0
+margin_bottom = 66.0
 
 [node name="Surface37" parent="Blocks" instance=ExtResource( 1 )]
 margin_left = 5517.0

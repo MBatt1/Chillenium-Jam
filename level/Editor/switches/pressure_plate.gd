@@ -21,4 +21,5 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	if (body.name == 'player' or body.name == '@player@2'):
-		get_node(connection).activate = false
+		if get_node(connection) != null:
+			get_node(connection).activate = false

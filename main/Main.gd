@@ -7,6 +7,8 @@ var level
 var player1
 var player2
 var heart
+var heart_target
+var heart_side
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,12 +18,14 @@ func _ready():
 	var spawns = level.get_player_spawns()
 	player1 = spawns[0].spawn(level, $LVC/Viewport/Cam)
 	player2 = spawns[1].spawn(level, $RVC/Viewport/Cam)
+	player1.connect("throw", self, "_on_p1_throw")
+	player2.connect("throw", self, "_on_p2_throw")
 	heart = heart_res.instance()
 	level.add_child(heart)
-	if level.heart_start == 0:
-		heart.possessor = player1
-	else:
-		heart.possessor = player2
+	heart_target = level.heart_start
+	heart_side = 0
+	_process(0)
+	heart.connect("player_impact", self, "_on_player_impact")
 	$LVC/Viewport/Cam.make_current()
 	$RVC/Viewport/Cam.make_current()
 
@@ -37,12 +41,74 @@ func _process(delta):
 		var avg_y = ($RVC/Viewport/Cam.position.y + $LVC/Viewport/Cam.position.y)/2
 		player1.camera_y_track = avg_y
 		player2.camera_y_track = avg_y
+		
+	if heart_target == 0:
+		if heart_side == 0:
+			heart.homing_target = player1.position
+		else:
+			heart.homing_target = $LVC/Viewport/Cam.position
+	elif heart_target == 1:
+		if heart_side == 1:
+			heart.homing_target = player2.position
+		else:
+			heart.homing_target = $RVC/Viewport/Cam.position
+	
+	
+func _physics_process(delta):
+	sided_heart()
 	
 
 func resize_viewports():
 	var width = get_viewport().size.x/2
 	var height = get_viewport().size.y
 	$RVC/Viewport.world_2d = $LVC/Viewport.world_2d
+
+
+func _on_player_impact(player):
+	if $Timer.is_stopped():
+		player.has_heart(true)
+		heart.get_node("CollisionShape2D").disabled = true
+		heart.visible = false
+
+
+func _on_p1_throw():
+	$Timer.start()
+	heart.visible = true
+	heart_target = 1
+	heart.rotation = Vector2(player1.speed_x, player1.speed_y).angle()
+	_process(0)
+
+	
+func _on_p2_throw():
+	$Timer.start()
+	heart.visible = true
+	heart_target = 0
+	heart.rotation = Vector2(player2.speed_x, player2.speed_y).angle()
+	_process(0)
+
+
+func _on_Timer_timeout():
+	heart.get_node("CollisionShape2D").disabled = false
+
+
+func sided_heart():
+	var heart_pos = heart.position
+	var l_cam_pos = $LVC/Viewport/Cam.position
+	var r_cam_pos = $RVC/Viewport/Cam.position
+	if heart_target == 0 and heart_side == 1 and r_cam_pos.x-heart_pos.x>=320:
+		heart.position.x = l_cam_pos.x+(r_cam_pos.x-heart_pos.x)
+		heart.position.y -= r_cam_pos.y-l_cam_pos.y
+		heart_side = 0
+	if heart_target == 1 and heart_side == 0 and heart_pos.x-l_cam_pos.x>=320:
+		heart.position.x = r_cam_pos.x-(heart_pos.x-l_cam_pos.x)
+		heart.position.y += r_cam_pos.y-l_cam_pos.y
+		heart_side = 1
+
+
+
+
+
+
 
 
 

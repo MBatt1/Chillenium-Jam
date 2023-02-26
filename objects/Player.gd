@@ -10,6 +10,8 @@ export(int) var drag
 export(int) var speed = 200
 export(int) var jump_strength = 200
 
+signal throw
+
 var alive = true
 var speed_x = 0
 var speed_y = 0
@@ -22,8 +24,11 @@ var up_control
 var right_control
 var down_control
 var left_control
+var use_control
 
-func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc):
+var has_heart = false
+
+func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc, tc):
 	weight = w
 	friction = f
 	drag = d
@@ -35,6 +40,7 @@ func setup(w, f, d, s, j, color, cam, uc, rc, dc, lc):
 	right_control = rc
 	down_control = dc
 	left_control = lc
+	use_control = tc
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -61,6 +67,9 @@ func _physics_process(delta):
 		else:
 			speed_y = 0
 	if alive == true:
+		if Input.is_action_pressed(use_control) and has_heart:
+			emit_signal("throw")
+			has_heart(false)
 		if Input.is_action_pressed(right_control):
 			$AnimatedSprite.flip_h = true
 			if is_on_floor():
@@ -98,7 +107,12 @@ func _process(delta):
 			else:
 				tracking_camera.position.y -= camera_y_track_speed*delta
 
-
+func has_heart(state):
+	has_heart = state
+	if state:
+		$HeartSprite.visible = true
+	else:
+		$HeartSprite.visible = false
 
 
 

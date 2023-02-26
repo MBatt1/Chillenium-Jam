@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
-var possessor
-var speed = 4
-var turn_speed = 4
+signal player_impact(target)
+
+var homing_target
+var speed = 6
+var turn_speed = 9
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,14 +17,16 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	rotation = _rotate_a_little(delta*turn_speed)
+	if _distance_to_target() != 0:
+		var dist_turn_speed = (turn_speed*60/_distance_to_target())
+		rotation = _rotate_a_little(delta*dist_turn_speed)
 	var result = move_and_collide(Vector2(cos(rotation), sin(rotation))*speed)
 	if result:
-		print(result.collider.get_children())
+		emit_signal("player_impact", result.collider)
 		
 
 func _desired_angle():
-	return Vector2(position.x-possessor.position.x, position.y-possessor.position.y).normalized().angle()-PI
+	return Vector2(position.x-homing_target.x, position.y-homing_target.y).normalized().angle()-PI
 
 
 func _rotate_a_little(delta):
@@ -36,3 +40,7 @@ func _rotate_a_little(delta):
 		  out = rotation + max(-delta, rot)  
 	return out
 
+
+func _distance_to_target():
+	return Vector2(position.x-homing_target.x, position.y-homing_target.y).length()
+	

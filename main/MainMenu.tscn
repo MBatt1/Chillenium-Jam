@@ -1,38 +1,56 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://gui_theme.tres" type="Theme" id=2]
 [ext_resource path="res://main/Transition.tscn" type="PackedScene" id=3]
-[ext_resource path="res://music/main_menu.mp3" type="AudioStream" id=4]
+[ext_resource path="res://main/MenuBackground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/TGITTLE.png" type="Texture" id=5]
+[ext_resource path="res://music/main_menu.mp3" type="AudioStream" id=6]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -204.0
+margin_top = -245.0
+margin_right = 1494.0
+margin_bottom = 922.0
+color = Color( 0.0627451, 0.34902, 0.521569, 1 )
+
+[node name="MenuBG" parent="." instance=ExtResource( 4 )]
+position = Vector2( 591, -662 )
+rotation = 0.666716
+
 [node name="PlayButton" type="Button" parent="."]
 margin_left = 462.0
-margin_top = 390.0
+margin_top = 414.0
 margin_right = 806.0
-margin_bottom = 474.0
+margin_bottom = 498.0
 rect_pivot_offset = Vector2( 182, 60 )
 theme = ExtResource( 2 )
 text = "PLAY!"
 
 [node name="ExitButton" type="Button" parent="."]
 margin_left = 462.0
-margin_top = 541.0
+margin_top = 577.0
 margin_right = 806.0
-margin_bottom = 625.0
+margin_bottom = 661.0
 rect_pivot_offset = Vector2( 182, 60 )
 theme = ExtResource( 2 )
 text = "QUIT"
 
-[node name="Transition" parent="." instance=ExtResource( 3 )]
-
 [node name="bgm" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 633, 371 )
-stream = ExtResource( 4 )
+stream = ExtResource( 6 )
 volume_db = -15.0
 max_distance = 50000.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 637, 189.75 )
+scale = Vector2( 1.03322, 1.03322 )
+texture = ExtResource( 5 )
+
+[node name="Transition" parent="." instance=ExtResource( 3 )]
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

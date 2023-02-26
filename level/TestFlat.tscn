@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://level/Editor/PlayerSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://level/Editor/switches/lever.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level/Editor/activateable/MovableObject.tscn" type="PackedScene" id=7]
 [ext_resource path="res://level/Editor/hazards/falling/FallingObject.tscn" type="PackedScene" id=8]
+[ext_resource path="res://level/Editor/switches/pressure_plate.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1611.5, 83.5 )
@@ -78,3 +79,7 @@ margin_bottom = 67.0
 speed = Vector2( 0, 400 )
 y_final = 1000
 y_offset = 20
+
+[node name="pressure_plate" parent="." instance=ExtResource( 9 )]
+position = Vector2( 557, 373 )
+connection = NodePath("../spikebody")

@@ -61,7 +61,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		speed_y += weight*delta
 		if Input.is_action_pressed(down_control):
-			speed_y += 200
+			$AnimatedSprite.play("pound")
+			speed_x = 0
+			speed_y += 150
 	else:
 		if Input.is_action_pressed(up_control) and alive == true:
 			$AnimatedSprite.play("jump")

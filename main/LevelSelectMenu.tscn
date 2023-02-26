@@ -1,11 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://main/Transition.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/LevelSelectMenu.gd" type="Script" id=3]
+[ext_resource path="res://music/main_menu.mp3" type="AudioStream" id=4]
+[ext_resource path="res://main/MenuBackground.tscn" type="PackedScene" id=5]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -204.0
+margin_top = -245.0
+margin_right = 1494.0
+margin_bottom = 922.0
+color = Color( 0.552941, 0.113725, 0.0117647, 1 )
+
+[node name="MenuBG" parent="." instance=ExtResource( 5 )]
+position = Vector2( -462, 173 )
+rotation = -0.757473
+mode = 1
 
 [node name="Button1" type="Button" parent="."]
 margin_left = 200.0
@@ -52,10 +66,26 @@ rect_pivot_offset = Vector2( -335, -236 )
 theme = ExtResource( 1 )
 text = "5"
 
+[node name="Button6" type="Button" parent="."]
+margin_left = 38.0
+margin_top = 608.0
+margin_right = 115.0
+margin_bottom = 685.0
+rect_pivot_offset = Vector2( -335, -236 )
+theme = ExtResource( 1 )
+text = "<"
+
 [node name="Transition" parent="." instance=ExtResource( 2 )]
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 633, 371 )
+stream = ExtResource( 4 )
+volume_db = -15.0
+max_distance = 50000.0
 
 [connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_Button6_pressed"]

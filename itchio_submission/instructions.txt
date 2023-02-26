@@ -31,6 +31,8 @@ Arrow Key movement
 Down Arrow to hard drop
 Right Shift to fire the heart
 
+Escape to quit levels
+
 
 Software Used
 Godot Engine

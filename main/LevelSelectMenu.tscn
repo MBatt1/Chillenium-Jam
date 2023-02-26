@@ -31,31 +31,22 @@ theme = ExtResource( 1 )
 text = "1"
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 395.0
+margin_left = 462.0
 margin_top = 236.0
-margin_right = 495.0
+margin_right = 562.0
 margin_bottom = 336.0
 rect_pivot_offset = Vector2( -335, -236 )
 theme = ExtResource( 1 )
 text = "2"
 
 [node name="Button3" type="Button" parent="."]
-margin_left = 590.0
+margin_left = 705.0
 margin_top = 239.0
-margin_right = 690.0
+margin_right = 805.0
 margin_bottom = 339.0
 rect_pivot_offset = Vector2( 61, 100 )
 theme = ExtResource( 1 )
 text = "3"
-
-[node name="Button4" type="Button" parent="."]
-margin_left = 785.0
-margin_top = 237.0
-margin_right = 885.0
-margin_bottom = 337.0
-rect_pivot_offset = Vector2( -335, -236 )
-theme = ExtResource( 1 )
-text = "4"
 
 [node name="Button5" type="Button" parent="."]
 margin_left = 980.0
@@ -64,7 +55,7 @@ margin_right = 1080.0
 margin_bottom = 336.0
 rect_pivot_offset = Vector2( -335, -236 )
 theme = ExtResource( 1 )
-text = "5"
+text = "4"
 
 [node name="Button6" type="Button" parent="."]
 margin_left = 38.0
@@ -86,6 +77,5 @@ max_distance = 50000.0
 [connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
-[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
 [connection signal="pressed" from="Button6" to="." method="_on_Button6_pressed"]

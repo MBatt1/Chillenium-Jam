@@ -124,16 +124,16 @@ margin_bottom = 147.0
 rect_pivot_offset = Vector2( 40, 40 )
 
 [node name="Platform4" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = -1656.0
-margin_top = -258.0
-margin_right = -1603.0
-margin_bottom = -246.0
+margin_left = -1731.0
+margin_top = -248.0
+margin_right = -1678.0
+margin_bottom = -236.0
 
 [node name="Platform7" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = -1654.0
-margin_top = -196.0
-margin_right = -1601.0
-margin_bottom = -184.0
+margin_left = -1591.0
+margin_top = -130.0
+margin_right = -1538.0
+margin_bottom = -118.0
 
 [node name="Platform9" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = 2094.0
@@ -172,16 +172,22 @@ margin_right = 1825.0
 margin_bottom = 84.0
 
 [node name="Platform6" parent="Level Geometry" instance=ExtResource( 6 )]
-margin_left = -1592.0
-margin_top = 79.0
-margin_right = -1539.0
-margin_bottom = 91.0
+margin_left = -1591.0
+margin_top = -287.0
+margin_right = -1538.0
+margin_bottom = -275.0
 
 [node name="Platform5" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = -1731.0
-margin_top = -114.0
+margin_top = 9.0
 margin_right = -1678.0
-margin_bottom = -102.0
+margin_bottom = 21.0
+
+[node name="Platform16" parent="Level Geometry" instance=ExtResource( 6 )]
+margin_left = -1551.0
+margin_top = 79.0
+margin_right = -1498.0
+margin_bottom = 91.0
 
 [node name="Net 2" parent="Level Geometry" instance=ExtResource( 6 )]
 margin_left = 1669.0
@@ -261,15 +267,12 @@ margin_right = -2172.0
 margin_bottom = 0.0
 
 [node name="spikebody" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2151, -189 )
+position = Vector2( -2119, -206 )
 v_flip = true
 
 [node name="spikebody3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2082, 37 )
-
-[node name="spikebody2" parent="." instance=ExtResource( 8 )]
-position = Vector2( -2087, -189 )
-v_flip = true
+position = Vector2( -2081, 56 )
+scale = Vector2( 0.78, 0.8 )
 
 [node name="P1 Door" parent="." instance=ExtResource( 3 )]
 margin_left = -1292.0
@@ -290,5 +293,5 @@ y_final = 100
 y_offset = 5
 
 [node name="lever" parent="." instance=ExtResource( 5 )]
-position = Vector2( -2011, -54 )
+position = Vector2( -2009, -53 )
 connection = NodePath("../Level Geometry/P1 Elevator")

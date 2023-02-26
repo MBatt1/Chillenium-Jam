@@ -40,6 +40,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if not $sm.playing:
+		$sm.play(0)
 	position = Vector2((get_viewport().size.x-1280)/2, 0)
 	if Input.is_action_pressed("ui_cancel"):
 		$Transition.transition_to()

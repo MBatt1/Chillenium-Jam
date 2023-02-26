@@ -142,9 +142,11 @@ func _on_p_death():
 func check_end():
 	if player1.check and player2.check and not gameover:
 		gameover = true
-		$HeartSprite.visible = true
+		player1.has_heart(false)
+		player2.has_heart(false)
+		player1.visible = false
+		player2.visible = false
 		heart_target = -1
-		yield(get_tree().create_timer(4), "timeout")
 		$Transition.transition_to()
 		yield($Transition, "done")
 		var _ignore = get_tree().change_scene("res://main/LevelSelectMenu.tscn")

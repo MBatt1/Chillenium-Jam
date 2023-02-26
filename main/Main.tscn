@@ -126,39 +126,39 @@ rect_pivot_offset = Vector2( 80, 20 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Frame/Center"]
 position = Vector2( 634, -26 )
 frames = SubResource( 10 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/Center"]
 position = Vector2( 634, 130 )
 frames = SubResource( 10 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/Center"]
 position = Vector2( 615, 392 )
 frames = SubResource( 10 )
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 19, -106 )
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/Center"]
 position = Vector2( 615, 392 )
 frames = SubResource( 10 )
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 19, 50 )
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/Center"]
 position = Vector2( 634, 598 )
 frames = SubResource( 10 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Frame/Center"]
 position = Vector2( 634, 754 )
 frames = SubResource( 10 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="EdgeR" type="Node2D" parent="Frame"]
@@ -167,35 +167,35 @@ playing = true
 position = Vector2( 1269, 66 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/EdgeR"]
 position = Vector2( 1269, 222 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/EdgeR"]
 position = Vector2( 1268.5, 378 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/EdgeR"]
 position = Vector2( 1268.5, 534 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/EdgeR"]
 position = Vector2( 1268.5, 690 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="EdgeL" type="Node2D" parent="Frame"]
@@ -205,7 +205,7 @@ position = Vector2( -932, 76 )
 position = Vector2( 947, -28 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
@@ -213,7 +213,7 @@ flip_h = true
 position = Vector2( 947, 128 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
@@ -221,7 +221,7 @@ flip_h = true
 position = Vector2( 946.5, 284 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
@@ -229,7 +229,7 @@ flip_h = true
 position = Vector2( 946.5, 440 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
@@ -237,7 +237,7 @@ flip_h = true
 position = Vector2( 946.5, 596 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
@@ -249,63 +249,63 @@ rotation = -1.5708
 position = Vector2( 66.7866, 967.333 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/EdgeTop"]
 position = Vector2( 66.7866, 1123.33 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/EdgeTop"]
 position = Vector2( 66.2864, 1279.33 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/EdgeTop"]
 position = Vector2( 66.2864, 1435.33 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/EdgeTop"]
 position = Vector2( 66.2866, 1591.33 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Frame/EdgeTop"]
 position = Vector2( 66.9395, 1747.38 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="Frame/EdgeTop"]
 position = Vector2( 66.4399, 1903.38 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="Frame/EdgeTop"]
 position = Vector2( 66.4395, 2059.38 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="Frame/EdgeTop"]
 position = Vector2( 66.4395, 2215.38 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="EdgeTop2" type="Node2D" parent="Frame"]
@@ -316,63 +316,63 @@ rotation = 1.5708
 position = Vector2( 633.935, -2199.11 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Frame/EdgeTop2"]
 position = Vector2( 633.935, -2043.11 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Frame/EdgeTop2"]
 position = Vector2( 633.434, -1887.11 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Frame/EdgeTop2"]
 position = Vector2( 633.434, -1731.11 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Frame/EdgeTop2"]
 position = Vector2( 633.434, -1575.11 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Frame/EdgeTop2"]
 position = Vector2( 634.087, -1419.07 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="Frame/EdgeTop2"]
 position = Vector2( 633.587, -1263.07 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="Frame/EdgeTop2"]
 position = Vector2( 633.587, -1107.07 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="Frame/EdgeTop2"]
 position = Vector2( 633.587, -951.066 )
 scale = Vector2( 0.403846, 1 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
